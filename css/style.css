@@ -45,8 +45,13 @@
             }
 
             nav a {
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                border-radius: 1rem;
                 text-decoration: none;
-                color: #f9bc60; /* Button textの色として使用 */
+                background-color: #f9bc60; /* Button textの色として使用 */
+                color: #fffffe;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 font-weight: bold;
             }
 
@@ -90,6 +95,10 @@
                 padding-bottom: 0.5rem;
             }
 
+            .hidden {
+                display: none;
+            }             
+
             article {
                 background-color: #004643; /* Backgroundに合わせる */
                 border: 1px solid #abd1c6; /* Paragraphカラーを使用 */
@@ -124,16 +133,18 @@
                 margin: 1rem 0;
             }
 
-            .read-more {
+            .btn {
                 display: inline-block;
-                color: #f9bc60; /* Buttonカラーを使用 */
+                padding: 0.5rem 1rem;
+                border-radius: 1rem;
                 text-decoration: none;
+                background-color: #f9bc60; /* Button textの色として使用 */
+                color: #fffffe;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 font-weight: bold;
-                padding: 0.5rem 0;
-                background-color: transparent; /* ボタン背景を透明に */
             }
 
-            .read-more:hover {
+            .btn:hover {
                 text-decoration: underline;
                 color: #001e1d; /* Button textカラーを使用 */
             }
@@ -141,6 +152,35 @@
             h3 {
                 margin-top: 0;
                 color: #fffffe; /* Headlineを#fffffe に変更 */
+            }
+
+            h4 {
+                margin-top: 0;
+                border-bottom: 2px solid #f9bc60; /* Buttonカラーを使用 */
+                padding-bottom: 0.5rem;
+            }
+
+            /* 目次のスタイリング */
+            .table-of-contents {
+                background-color: #005654;
+                padding: 1.5rem;
+                border-radius: 8px;
+                margin: 2rem 0;
+            }
+
+            .table-of-contents ul {
+                margin: 0;
+                padding-left: 1.5rem;
+            }
+
+            .table-of-contents a {
+                color: #abd1c6;
+                text-decoration: none;
+            }
+
+            .table-of-contents a:hover {
+                text-decoration: underline;
+                color: #001e1d; /* Button textカラーを使用 */
             }
 
             /* フッター */
@@ -174,21 +214,20 @@
             /* モバイル対応 */
             @media (max-width: 768px) {
                 .card-list {
-                  flex-direction: column;
-                  align-items: center;
+                    flex-direction: column;
+                    align-items: center;
                 }
               
                 .card {
-                  width: 90%;
+                    width: 90%;
                 }
-              }
+            }
               
-              /* メモ：　https://www.happyhues.co/palettes/10
-              - Background: #004643
-              - Headline: #fffffe
-              - Paragraph: #abd1c6
-              - Button text: #001e1d
-              - Button: #f9bc60
-              - 実際のボタン要素がないため、.read-moreとnavリンクをボタンとして扱いました
-              */
-              
+            /* メモ：　https://www.happyhues.co/palettes/10
+            - Background: #004643
+            - Headline: #fffffe
+            - Paragraph: #abd1c6
+            - Button text: #001e1d
+            - Button: #f9bc60
+            - 実際のボタン要素がないため、.btnとnavリンクをボタンとして扱いました
+            */
