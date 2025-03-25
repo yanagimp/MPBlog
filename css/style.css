@@ -1,0 +1,194 @@
+            /* 全体の文字と背景 */
+            body {
+                font-family: 'Zen Kaku Gothic New', sans-serif;
+                background-color: #004643; /* Backgroundを#004643に変更 */
+                color: #abd1c6; /* Paragraphを#abd1c6に変更 */
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* ヘッダー */
+            header {
+                background-color: #004643; /* typo修正とカラー変更 */
+                padding: 2rem; /* 上下のパディング、なんだろう？ */
+                text-align: center;
+            }
+
+            header h1 {
+                margin: 0;
+                color: #fffffe; /* Headlineを#fffffe に変更 */
+                font-size: 2.5rem;               
+            }
+
+            header p {
+                font-style: italic;
+                color: #abd1c6; /* Paragraphカラーに合わせる */
+            }
+
+            /* ナビゲーション */
+            nav {
+                background-color: #004643; /* Backgroundに合わせる */
+                padding: 1rem;
+                text-align: center;
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            nav li {
+                display: inline;
+                margin: 0 1rem; /* 左右のマージン */
+            }
+
+            nav a {
+                text-decoration: none;
+                color: #f9bc60; /* Button textの色として使用 */
+                font-weight: bold;
+            }
+
+            nav a:hover {
+                text-decoration: underline;
+                color: #001e1d; /* Button textのホバー色として使用 */
+            }
+
+            .layout {
+                display: flex; /* フレックスボックスを使用 */
+                flex-wrap: wrap; /* 折り返し */
+                gap: 2rem; /* 要素間のスペース */
+                padding: 2rem;
+                background-color: #004643; /* Backgroundに合わせる */
+            }
+            
+            /* メインコンテンツ */
+            main {
+                flex: 2; /* メインコンテンツを2倍の幅にする */
+                min-width: 300px; /* 最小幅 */  
+                padding: 2rem;
+                background-color: #004643; /* Backgroundに合わせる */
+            }
+
+            /* サイドバー */
+            aside {
+                flex: 1; /* サイドバーを1倍の幅にする */
+                background-color: #004643; /* Backgroundに合わせる */
+                padding: 1rem;
+                border-radius: 0.5rem;
+                min-width: 200px; /* 最小幅 */
+            }
+
+            section {
+                margin-bottom: 3rem; /* 下のマージン */
+            }
+
+            h2 {
+                color: #fffffe; /* Headlineを#fffffe に変更 */
+                border-bottom: 2px solid #f9bc60; /* Buttonカラーを使用 */
+                padding-bottom: 0.5rem;
+            }
+
+            article {
+                background-color: #004643; /* Backgroundに合わせる */
+                border: 1px solid #abd1c6; /* Paragraphカラーを使用 */
+                padding: 1rem;
+                margin-top: 1rem;
+                border-radius: 0.5rem;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+
+            .article-list {
+                display: grid;
+                gap: 1.5rem;
+            }
+
+            .article-card {
+                transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            }
+
+            .article-card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 4px 6px rgba(249, 188, 96, 0.2); /* Buttonカラーを使用 */
+            }
+
+            .article-date {
+                color: #abd1c6; /* Paragraphカラーに合わせる */
+                font-size: 0.9rem;
+                margin: 0.5rem 0;
+            }
+
+            .article-summary {
+                color: #abd1c6; /* Paragraphカラーに合わせる */
+                margin: 1rem 0;
+            }
+
+            .read-more {
+                display: inline-block;
+                color: #f9bc60; /* Buttonカラーを使用 */
+                text-decoration: none;
+                font-weight: bold;
+                padding: 0.5rem 0;
+                background-color: transparent; /* ボタン背景を透明に */
+            }
+
+            .read-more:hover {
+                text-decoration: underline;
+                color: #001e1d; /* Button textカラーを使用 */
+            }
+
+            h3 {
+                margin-top: 0;
+                color: #fffffe; /* Headlineを#fffffe に変更 */
+            }
+
+            /* フッター */
+            footer {
+                background-color: #004643; /* Backgroundに合わせる */
+                text-align: center;
+                padding: 1rem;
+                font-size: 0.9rem;
+                color: #abd1c6; /* Paragraphカラーに合わせる */
+            }
+
+            footer a {
+                color: #f9bc60; /* Buttonカラーを使用 */
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            footer a:hover {
+                text-decoration: underline;
+                color: #001e1d; /* Button textカラーを使用 */
+            }
+
+            /* 画像のキャプション */
+            figcaption {
+                text-align: center;
+                font-size: 0.8rem;
+                color: #abd1c6; /* Paragraphカラーに合わせる */
+                margin-top: 0.5rem;
+            }
+
+            /* モバイル対応 */
+            @media (max-width: 768px) {
+                .card-list {
+                  flex-direction: column;
+                  align-items: center;
+                }
+              
+                .card {
+                  width: 90%;
+                }
+              }
+              
+              /* メモ：　https://www.happyhues.co/palettes/10
+              - Background: #004643
+              - Headline: #fffffe
+              - Paragraph: #abd1c6
+              - Button text: #001e1d
+              - Button: #f9bc60
+              - 実際のボタン要素がないため、.read-moreとnavリンクをボタンとして扱いました
+              */
+              

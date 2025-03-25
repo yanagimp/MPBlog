@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang = "ja">
+    <head>
+        <meta charset = "UTF-8" />
+        <title>むっぽブログ</title>
+        <!-- 
+            linkタグ: 外部リソース（ここではCSSファイル）をHTMLに関連付けるためのタグ
+            rel属性: リンクされるリソースとの関係性を指定（ここでは"stylesheet"でCSSスタイルシートであることを示す）
+            href属性: リンク先のファイルパスを指定（ここでは"css/style.css"でcssフォルダ内のstyle.cssファイルを参照）
+        -->
+        <link rel = "stylesheet" href = "css/style.css">
+    </head>
+    
+    <body>
+
+    <header>
+        <h1>むっつりのっぽのブログ</h1>
+        <p>個人サイト人間になろう、なれるか？</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href = "#articles">記事</a></li>
+            <li><a href = "#contact">お問い合わせ</a></li>
+        </ul>
+    </nav>
+
+    <div class = "layout">
+    <main>
+
+        <section id = "articles">
+            <h2>記事</h2>
+            
+            <div class = "article-list">
+                <article class = "article-card">
+                    <h3><a href = "article-1.html">記事のタイトル</a></h3>
+                    <p class = "article-date">2023年12月1日</p>
+                    <p class = "article-summary">記事の簡単な説明文をここに入れることができます。読者が興味を持ちやすくなります。</p>
+                    <a href = "article-1.html" class = "read-more">続きを読む</a>
+                </article>
+                
+                <!-- 複数の記事を表示する場合は以下のように追加できます -->
+                <article class = "article-card">
+                    <h3><a href = "article-2.html">別の記事のタイトル</a></h3>
+                    <p class = "article-date">2023年11月15日</p>
+                    <p class = "article-summary">別の記事の簡単な説明文です。画像を追加することもできます。</p>
+                    <a href = "article-2.html" class = "read-more">続きを読む</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <aside>
+        <h2>自己紹介</h2>
+        <div style="text-align: center;">
+            <img src = "img/_DSF5175.jpg" alt = "むっぽの写真" width = "200"/>
+        </div>
+        <p>むっつりのっぽです。まずはHTMLを練習してみようと思っている</p>
+        
+        <h2>カテゴリー</h2>
+        <ul>
+            <li><a href = "#">カテゴリー1</a></li>
+            <li><a href = "#">カテゴリー2</a></li>
+            <li><a href = "#">カテゴリー3</a></li>
+        </ul>
+    </aside>
+    </div>
+    <footer id = "contact"> 
+        <p><a href="mailto:backsuu@gmail.com"> ご連絡はこちら!</a></p>
+    </footer>
+</body>
+</html>
