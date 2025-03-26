@@ -60,13 +60,6 @@
                 color: #001e1d; /* Button textのホバー色として使用 */
             }
 
-            .layout {
-                display: flex; /* フレックスボックスを使用 */
-                flex-wrap: wrap; /* 折り返し */
-                gap: 2rem; /* 要素間のスペース */
-                padding: 2rem;
-                background-color: #004643; /* Backgroundに合わせる */
-            }
             
             /* メインコンテンツ */
             main {
