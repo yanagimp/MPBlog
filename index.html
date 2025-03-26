@@ -13,47 +13,60 @@
     
     <body>
 
-    <header>
-        <div style="background-image: url('img/header_background.webp'); background-size: cover; text-align: center; padding: 50px 0;">
-            <h1 style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">むっつりのっぽのブログ</h1>
-            <p style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">個人サイト人間になろう、なれるか？</p>
-        </div>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href = "#about">About</a></li>
-            <li><a href = "#works">Works/Plays</a></li>
-            <li><a href = "#articles">Blog</a></li>
-            <li><a href = "#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-
     <main>
 
-        <section id = "hero">
-            <div style="text-align: center;">
-                <img src = "img/_DSF5175.jpg" alt = "むっぽの写真" width = "200"/>
-            <p>むっぽ/Shogo Yanagi <br>
-                ふらふらフリーランス
-            </p>        
+        <section id="profile" class="text-overlay-container">
+            <div class = "job-title"> WANNABE/TRIALIST </div>
+            <div class="background-text">MUPPO</div>
+            <div class="photo-container">
+                <img src="img/_DSF5175.jpg" alt="むっぽの写真" width="200"/>
             </div>
+            <div class="profile-info">
+                <p>2021年に情報工学の修士を取得し、
+                    新卒で経営コンサル企業に入社し、3年弱勤務。<br>
+                    現在は、学術バー・
+                    Communicativeバーのスタッフ、
+                    ボーカルコーチとして活動中。<br>
+                    分からないことだらけで、「どうあると楽しいか」実験中。</p>
+                <div class="skills">
+                   <!-- スキルや経験などを追加できます -->
+                    #経営コンサル / #バースタッフ / #ボーカルコーチ / #情報工学(自然言語処理) /<br>
+                     #DTM / #ボイスパーカッション / #弾き語り
+            </div>
+            
         </section>
+
+        <nav>
+            <ul>
+                <li><a href = "#about">About</a></li>
+                <li><a href = "#works">Works/Plays</a></li>
+                <li><a href = "#articles">Blog</a></li>
+                <li><a href = "#contact">Contact</a></li>
+            </ul>
+        </nav>
     
-        <section id = "articles">
+        <section id="articles">
             <h2>記事</h2>
             
-            <div class = "article-list">
-                <article class = "article-card">
-                    <p class = "article-date">2025年3月26日</p>
+            <div class="article-list">
+                <article class="article-card">
+                    <p class="article-date">2025年3月26日</p>
                     <h3><a href="article-1.html">はじめてのHTML挑戦</a></h3>
-                    <p class = "excerpt">
+                    <p class="excerpt">
                         はじめてのHTML挑戦について書きます。
                     </p>
                     <a href="article-1.html" class="btn">続きを読む</a>
                 </article>
-                            </div>
+
+                <article class="article-card">
+                    <p class="article-date">2025年3月27日</p>
+                    <h3><a href="article-1.html">おしゃれサイトにしたい、どうすればいいんだ</a></h3>
+                    <p class="excerpt">
+                        おしゃれなサイトにしたい。当初の目的は、プログラミングのための勉強だったのに。
+                    </p>
+                    <a href="article-2.html" class="btn">続きを読む</a>
+                </article>
+            </div>
         </section>
     </main>
 
