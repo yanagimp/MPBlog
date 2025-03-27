@@ -44,34 +44,71 @@
                 <li><a href = "#contact">Contact</a></li>
             </ul>
         </nav>
-    
+
+        <section id="works">
+            <h2>Works/Plays</h2>
+            <div class="content-list">
+                <div class="content-card work">
+                    <img src="img/role.png" alt="roleの画像" width="500"/>
+                    <h3><a href="https://linkco.re/BqasTXrZ">role</a></h3>
+                    <p>作詞作曲から編曲、ミックス・マスタリングまで一人で制作したオリジナル曲。<br>
+                        "大人"のフリに疲れていませんか？と思うし、
+                        自分に対してもそう思っている。
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- コメント: 文字がカードに収まるようにするには、
+         CSSでフォントサイズを調整することができます。
+         例えば、.content-card p { font-size: calc(1em + 0.5vw); } のように指定します。 -->
+
         <section id="articles">
-            <h2>記事</h2>
-            
-            <div class="article-list">
-                <article class="article-card">
-                    <p class="article-date">2025年3月26日</p>
+            <h2>Blog</h2>
+            <div class="content-list">
+                <article class="content-card article">
+                    <img src="img/image_screenshot_250326.png" alt="ギャル師匠ブログの画像"/>
                     <h3><a href="article-1.html">はじめてのHTML挑戦</a></h3>
                     <p class="excerpt">
                         はじめてのHTML挑戦について書きます。
                     </p>
                     <a href="article-1.html" class="btn">続きを読む</a>
+                    <p class="article-date">2025.03.25</p>
                 </article>
 
-                <article class="article-card">
-                    <p class="article-date">2025年3月27日</p>
-                    <h3><a href="article-1.html">おしゃれサイトにしたい、どうすればいいんだ</a></h3>
+                <article class="content-card article">
+                    <img src="img/top_250326.png" alt="トップページの画像" width="500"/>
+                    <h3><a href="article-2.html">おしゃれサイトにしたい、どうすればいいんだ</a></h3>
                     <p class="excerpt">
-                        おしゃれなサイトにしたい。当初の目的は、プログラミングのための勉強だったのに。
+                        おしゃれなサイトにしたいと思ってしまっている。<br>
+                        当初の目的は、プログラミングのための勉強だったのに。
                     </p>
+                    <p class="article-date">2025.03.26</p>
                     <a href="article-2.html" class="btn">続きを読む</a>
                 </article>
+
+                <article class="content-card article">
+                    <h3><a href="article-3.html">28歳、ぐねぐねの道</a></h3>
+                    <p class="excerpt">
+                        「理解と体験の乖離」に悩みながら、
+                        「しなやかで博識な理想の爺さん」という将来像を見出すも、
+                        その道筋の不確かさに揺れる思考の記録。
+                    </p>
+                    <p class="article-date">2025.03.27</p>
+                    <a href="article-3.html" class="btn">続きを読む</a>
+                </article>
+
             </div>
         </section>
     </main>
 
     <footer id = "contact"> 
-        <p><a href="mailto:backsuu@gmail.com"> ご連絡はこちら!</a></p>
+        <p><a href="mailto:backsuu@gmail.com"> PLEASE E-MAIL ME ANYTIME.</a></p>
+        <p>© 2025 MUPPO</p>
+        <div style="display: flex; justify-content: center; gap: 10px;">
+            <a href="https://twitter.com/backsuu1" target="_blank" class="btn">Twitter</a>
+            <a href="https://www.instagram.com/muttsuri_noppo" target="_blank" class="btn">Instagram</a>
+            <a href="https://ko-fi.com/muttsurinoppo" target="_blank" class="btn">Buy Me a Coffee</a>
+        </div>
     </footer>
 
     <script src = "js/main.js"></script>

@@ -100,27 +100,86 @@
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             }
 
-            .article-list {
-                display: grid;
+            /* 共通のリストスタイル */
+            .content-list {
+                display: flex;
+                flex-direction: row;
                 gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
-            .article-card {
+            .content-card {
+                position: relative;
+                width: 300px;
+                height: 400px; /* 高さを固定 */
+                padding: 20px;
+                margin-bottom: 30px;
+                background-color: #fffffe;
+                border: 1px solid #abd1c6;
+                border-radius: 0.5rem;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
                 transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                overflow: hidden; /* カード内のコンテンツがはみ出さないようにする */
             }
 
-            .article-card:hover {
+            .content-card:hover {
                 transform: translateY(-3px);
-                box-shadow: 0 4px 6px rgba(249, 188, 96, 0.2); /* Buttonカラーを使用 */
+                box-shadow: 0 4px 6px rgba(249, 188, 96, 0.2);
             }
 
-            .article-date {
-                color: #abd1c6; /* Paragraphカラーに合わせる */
-                font-size: 0.9rem;
-                margin: 0.5rem 0;
+            .content-card img {
+                width: 100%;  /* カード幅いっぱいに表示 */
+                height: auto;
+                margin-bottom: 15px;
             }
 
-            .article-summary {
+            .content-card h3 {
+                font-size: 1.1em;  /* タイトルを少し小さく */
+                opacity: 0.8;  /* 少し透明度を上げて控えめに */
+            }
+
+            .content-card h3 a {
+                text-decoration: none;
+                color: #004643; /* Headlineカラーに合わせる */
+            }
+
+            .content-card h3 a:hover {
+                text-decoration: underline;
+            }
+
+            .content-card p {
+                font-size: 0.8em; /* フォントサイズをさらに小さくして調整 */
+                line-height: 1.2; /* 行間を詰める */
+                overflow: hidden; /* はみ出したテキストを隠す */
+                text-overflow: ellipsis; /* はみ出した部分を省略記号で表示 */
+                max-height: 3.6em; /* 最大高さを設定してテキストが収まるようにする */
+            }
+
+            .content-card .excerpt {
+                font-size: 0.8em;  /* 序文をさらに小さく */
+                opacity: 0.7;  /* より透明度を上げて控えめに */
+                margin-bottom: 20px;
+            }
+
+            .content-card .article-date {
+                position: absolute;  /* カードに対して絶対配置 */
+                bottom: 20px;  /* 下から20px */
+                right: 20px;  /* 右から20px */
+                font-size: 0.8em;  /* 文字を小さく */
+                color: #999;  /* グレーで控えめに */
+                margin: 0;
+            }
+
+            .content-card .btn {
+                display: inline-block;
+                margin-bottom: 0;
+                position: absolute;  /* カードに対して絶対配置 */
+                bottom: 20px;  /* 下から20px */
+                left: 20px;  /* 左から20px */
+            }
+
+            .content-summary {
                 color: #abd1c6; /* Paragraphカラーに合わせる */
                 margin: 1rem 0;
             }
@@ -285,14 +344,74 @@
                 z-index: 3;
             }
 
+
             /* レスポンシブ対応 */
             @media (max-width: 768px) {
+                /* 既存のスタイル */
                 .background-text {
                     font-size: 100px;
                 }
-
+            
                 .photo-container {
                     width: 200px;
                     height: 200px;
+                }
+            
+                /* 追加のレスポンシブスタイル */
+                header h1 {
+                    font-size: 2rem;
+                }
+            
+                nav li {
+                    display: block;
+                    margin: 0.5rem 0;
+                }
+            
+                main {
+                    padding: 1rem;
+                }
+            
+                .content-list {
+                    grid-template-columns: 1fr;
+                }
+            
+                .table-of-contents {
+                    padding: 1rem;
+                }
+            }
+            
+            /* タブレット用のブレークポイント追加 */
+            @media (min-width: 769px) and (max-width: 1024px) {
+                .background-text {
+                    font-size: 180px;
+                }
+            
+                .photo-container {
+                    width: 250px;
+                    height: 250px;
+                }
+            
+                .content-list {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            
+            /* 小さいモバイル画面用 */
+            @media (max-width: 480px) {
+                .text-overlay-container {
+                    height: 600px;
+                }
+            
+                .background-text {
+                    font-size: 60px;
+                }
+            
+                .photo-container {
+                    width: 150px;
+                    height: 150px;
+                }
+            
+                header h1 {
+                    font-size: 1.5rem;
                 }
             }
