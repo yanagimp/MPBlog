@@ -3,15 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <title>デザインソロ独習メモ</title>
-        <!-- 
-            linkタグ: 外部リソース（ここではCSSファイル）をHTMLに関連付けるためのタグ
-            rel属性: リンクされるリソースとの関係性を指定（ここでは"stylesheet"でCSSスタイルシートであることを示す）
-            href属性: リンク先のファイルパスを指定（ここでは"css/style.css"でcssフォルダ内のstyle.cssファイルを参照）
-        -->
         <link rel="stylesheet" href="css/style.css">
         <style>
             .teacher-quote {
-                background-color: #e8f3f1;  /* 薄い青緑色 */
+                background-color: #e8f3f1;
                 border-left: 4px solid #f9bc60;
                 padding: 15px;
                 margin: 20px 0;
@@ -20,7 +15,7 @@
             }
             
             .my-response {
-                background-color: #fff1e6;  /* 薄いピーチ色 */
+                background-color: #fffffe;
                 margin: 15px 0;
                 padding-left: 20px;
                 border-left: 2px dashed #abd1c6;
@@ -34,7 +29,7 @@
             }
             
             .teacher-feedback {
-                background-color: #e3f6f5;  /* 薄い水色 */
+                background-color: #e3f6f5;
                 border-left: 4px solid #abd1c6;
                 padding: 15px;
                 margin: 20px 0;
@@ -83,7 +78,6 @@
                 text-align: left;
             }
 
-
             .toc-sections {
                 display: flex;
                 flex-direction: column;
@@ -100,25 +94,25 @@
                 text-align: left;
             }
 
-            .toc-section:hover {
+            .toc-section h3:hover {
                 transform: translateX(5px);
             }
 
             .toc-section h3 {
                 text-align: left;
-                margin: 0;
-                display: inline;
+                margin: 0 0 0.2rem 0;
                 color: #004643;
-                font-size: 1.1em;
+                font-size: 1em;
+                line-height: 1.2;
             }
 
             .toc-section p {
-                margin: 0.5rem 0;
-                font-size: 0.7em;
-                color: #abd1c6;
-                display: inline;
-                margin-left: 10px;
+                margin: 0;
+                font-size: 0.8em;
+                color: #004643;
+                margin-left: 8px;
                 text-align: left;
+                line-height: 1.3;
             }
 
             .toc-section a {
@@ -149,7 +143,6 @@
                 background: none;
             }
 
-            /* フィードバックテーブルのスタイルを追加 */
             .feedback-table {
                 width: 100%;
                 border-collapse: collapse;
@@ -174,7 +167,6 @@
                 background-color: #abd1c6;
             }
 
-            /* スキルテーブルのスタイルを追加 */
             .skill-table {
                 width: 100%;
                 border-collapse: collapse;
@@ -204,43 +196,19 @@
                 color: #004643;
             }
 
-            /* 目的セクションのスタイルを追加 */
-            .purpose {
-                background-color: #fffffe;
-                border-left: 4px solid #f9bc60;
-                padding: 15px;
-                margin: 20px 0;
-                border-radius: 5px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            }
-
-            .purpose h3 {
-                color: #004643;
-                margin-top: 0;
-                margin-bottom: 10px;
-                font-size: 1.1em;
-            }
-
-            .purpose p {
-                margin: 0;
-                line-height: 1.6;
-                color: #001e1d;
-            }
-
-            /* 個人メモセクションのスタイルを追加 */
             .personal-note {
                 position: absolute;
-                right: -160px;  /* 左側にはみ出す量を調整 */
+                right: -220px;
                 width: 180px;
                 background-color: #fff1e6;
-                padding: 10px;
-                margin: 10px 0;
+                padding: 1rem;
+                margin: 0;
                 border-radius: 8px;
                 font-size: 0.8em;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             }
 
-            .personal-note::after {
+            .personal-note::before {
                 content: '';
                 position: absolute;
                 left: -10px;
@@ -256,7 +224,6 @@
                 color: #004643;
             }
 
-            /* チャプターサマリーのスタイルを追加 */
             .chapter-summary {
                 background-color: #fffffe;
                 border-left: 4px solid #f9bc60;
@@ -282,43 +249,65 @@
                 font-weight: 500;
             }
 
-            /* 記事全体の幅を調整 */
             .layout {
                 width: 80%;
                 margin: 0 auto;
-                position: relative;  /* 子要素の配置の基準点として設定 */
+                position: relative;
+                display: grid;
+                grid-template-columns: 1fr minmax(auto, 800px) 1fr;
+                gap: 2rem;
+                max-width: 1400px;
+            }
+
+            main {
+                position: relative;
+                grid-column: 2;
+                overflow: visible;
+            }
+
+            .article-sections {
+                position: relative;
+                overflow: visible;
+            }
+
+            .accordion-section {
+                position: relative;
+                overflow: visible;
             }
 
             @media (max-width: 1200px) {
-                .personal-note {
-                    position: static;
-                    width: auto;
-                    margin: 20px 0;
-                }
-
-                .personal-note::after {
-                    display: none;
+                .layout {
+                    grid-template-columns: 1fr;
+                    width: 95%;
                 }
 
                 main {
-                    margin-left: 0;
+                    grid-column: 1;
+                }
+
+                .personal-note {
+                    position: static;
+                    width: auto;
+                    margin: 1rem 0;
+                }
+
+                .personal-note::before {
+                    display: none;
                 }
             }
-
         </style>
     </head>
     
     <body>
-    
-
         <nav>
             <ul>
-                <li><a href = "index.html">About</a></li>
-                <li><a href = "index.html#works">Works/Plays</a></li>
-                <li><a href = "index.html#articles">Blog</a></li>
-                <li><a href = "index.html#contact">Contact</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="index.html#works">Works/Plays</a></li>
+                <li><a href="index.html#articles">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
+
         <div class="layout">
             <main>
                 <article>
@@ -333,41 +322,44 @@
                                 だって、余裕があって博識なジジイになりたいから。<br>
                                 そんなわけで、独習を積み重ねることにします。
                             </p>
-                                工夫する点は、下記の2つ。
-                                <ul>
-                                    <li><span class="highlight">①独習のやり方自体を組み立ててみる</span></li>
-                                    <li><span class="highlight">②独習のための相方として、生成AI系の技術に頼りまくる</span></li>
-                                </ul>
-                            
+                            工夫する点は、下記の2つ。
+                            <ul>
+                                <li><span class="highlight">①独習のやり方自体を組み立ててみる</span></li>
+                                <li><span class="highlight">②独習のための相方として、生成AI系の技術に頼りまくる</span></li>
+                            </ul>
                             
                             <p>
                                 <strong>今日は、デザインについて学んでいきましょう。</strong>
+                                <p class="personal-note">
+                                    ちなみに、やけに長いので、
+                                    読みやすいところだけ読んでね！
+                                </p>
                             </p>
                         </section>
 
                         <!-- 目次の修正 -->
                         <nav class="table-of-contents">
                             <h2>📚 この記事の内容</h2>
-                                <div style="font-size: 0.8rem; text-align: left;">
-                                    デザインの観察力を養う学習の記録。<br>
-                                    「なぜそのデザインは良いのか」を言語化する練習をします<br>
-                                    AIを先生役にして独自のカリキュラムを作り、自分専用の学習環境で実践してみます。
-                                </div>
+                            <div style="font-size: 0.8rem; text-align: left;">
+                                デザインの観察力を養う学習の記録。<br>
+                                「なぜそのデザインは良いのか」を言語化する練習をします<br>
+                                AIを先生役にして独自のカリキュラムを作り、自分専用の学習環境で実践してみます。
+                            </div>
                             <div class="toc-sections">
                                 <div class="toc-section">
                                     <h3><a href="#lesson2" class="toc-link">1. 「デザイン観察力トレーニング」の授業を作ってもらおう</a></h3>
                                     <p>独習のためのAIカリキュラム作成について</p>
                                     <br>
                                     
-                                    <h3><a href="#lesson2-intro" class="toc-link">2. 観察力トレーニング入門</a></h3>
+                                    <h3><a href="#lesson2-intro" class="toc-link">2. 入門：「デザインが上手い」ってなんですか？</a></h3>
                                     <p>「デザインが上手い」とはどういうことか？問題解決の視点から考察します。</p>
                                     <br>
                                     
-                                    <h3><a href="#practice1" class="toc-link">3. バナー分析の実践</a></h3>
+                                    <h3><a href="#practice1" class="toc-link">3. 実践：バナー画像の比較分析</a></h3>
                                     <p>2つの異なるバナーを比較し、デザイン要素が与える印象の違いを分析します。</p>
                                     <br>
                                     
-                                    <h3><a href="#practice2" class="toc-link">4. 観察を深める</a></h3>
+                                    <h3><a href="#practice2" class="toc-link">4. 実践：問いのレベルを深める</a></h3>
                                     <p>印象・根拠・意図の3ステップで、デザインをより深く理解する方法を学びます。</p>
                                     <br>
                                     
@@ -378,9 +370,8 @@
                         </nav>
 
                         <details class="accordion-section">
-                            <summary>「デザイン観察力トレーニング」の授業を作ってもらおう</summary>
+                            <summary>1. 「デザイン観察力トレーニング」の授業を作ってもらおう</summary>
                             <section id="lesson-making">
-                                
                                 <div class="chapter-summary">
                                     <h4>この章のポイント</h4>
                                     <p>独習がしたいので、AIに依頼しました。依頼内容は、カリキュラムの作成と、先生としての授業実践。<br>
@@ -388,43 +379,46 @@
                                     </p>
                                 </div>
 
-                                    <h3>きっかけ：お金がないけど、学びたいことはたくさんある</h3>
-                                    <p>
-                                        学びたいことはたくさんあるけど、お金がない。そんな中でChatGPTを使って「カリキュラムを作って」と試していたら、
-                                        <span class="highlight">「AIに先生役をやってもらえば、自分専用の学校が作れるんじゃない？」</span>
-                                        というアイデアが浮かびました。　▶︎ 詳細は、別の記事にちゃんと書くつもりです（自分の脳内が整理できていないからまだ何もやっていない）
-                                    </p>
+                                <h3>きっかけ：お金がないけど、学びたいことはたくさんある</h3>
+                                <p>
+                                    学びたいことはたくさんあるけど、お金がない。そんな中でChatGPTを使って「カリキュラムを作って」と試していたら、
+                                    <strong>「AIに先生役をやってもらえば、自分専用の学校が作れるんじゃない？」</strong>
+                                    というアイデアが出てきました、やりたい。
+                                    <div class="personal-note">
+                                        <p>メモ：詳細は、別の記事にちゃんと書くつもりです（自分の脳内が整理できていないからまだ何もやっていない）</p>
+                                    </div>
+                                </p>
 
-                                    <h3>現在の状況：ファシリ先生の観察力トレーニングを実践中</h3>
-                                    <p>
-                                        現在はデザイン学校を作って、２週目の授業である「観察力トレーニング」を実践してみるところ。
-                                        担当のファシリ先生は一方的な講義ではなく、
-                                        「問いかけ」を通じて内省を促すスタイルです。
-                                        この記事では、そんなファシリ先生との対話を通じた
-                                        デザイン観察力トレーニングの記録を紹介します。
-                                    </p>
+                                <h3>現在の状況：ファシリ先生の観察力トレーニングを実践中</h3>
+                                <p>
+                                    現在はデザイン学校を作って、２週目の授業である「観察力トレーニング」を実践してみるところ。<br>
+                                    担当のファシリ先生は一方的な講義ではなく、
+                                    「問いかけ」を通じて内省を促すスタイルです。<br>
+                                    この記事では、そんなファシリ先生との対話を通じた
+                                    デザイン観察力トレーニングの授業を記録します。
+                                </p>
                             </section>
                         </details>
 
-                            <details class="accordion-section">
-                                <summary>「デザイン観察力トレーニング」入門</summary>
-                                <div class="chapter-summary">
-                                    <h4>この章のポイント</h4>
-                                    <p>先生の問いかけを通じて、デザインの観察力を磨く。
-                                    「デザインが上手い」って、あなたにとって何で、
-                                    それを制作に活かすなら、どんなふうに活かせますか？</p>
-                                </div>
-                                <div class="personal-note">
-                                    <p>＜注意書き＞問いかけと、僕の回答をメインに、省略しながら記載しています。
-                                    会話をフルで読みたい場合は、
-                                    <a href = "mailto:backsuu@gmail.com">ご連絡ください。</a></p>
-                                </div>
+                        <details class="accordion-section">
+                            <summary>2. 入門「デザインが上手い」ってなんですか？</summary>
+                            <div class="chapter-summary">
+                                <h4>この章のポイント</h4>
+                                <p>先生の問いかけを通じて、デザインの観察力を磨く。<br>
+                                「デザインが上手い」って、あなたにとって何で、
+                                それを制作に活かすなら、どんなふうに活かせますか？</p>
+                            </div>
+                            <div class="personal-note">
+                                <p>＜注意書き＞問いかけと、僕の回答をメインに、省略しながら記載しています。
+                                会話をフルで読みたい場合は、
+                                <a href="mailto:backsuu@gmail.com">ご連絡ください。</a></p>
+                            </div>
 
-                                <section id ="lesson2-intro">
+                            <section id="lesson2-intro">
                                 <p>早速始まった、ファシリテータータイプ（問いかけを重視する）の先生の授業。
                                 今日の目的は、「何故このデザインはよいのか？」を言葉にできるようになること。</p>
 
-                                <p>問いかけを重視する先生らしく、早速問いかけ。</p>
+                                <p>問いかけを重視する先生らしく、早速問いかけが始まる。</p>
                                 <div class="teacher-quote">
                                     <h3>先生の質問：</h3>
                                     <p>「デザインが上手い」って、どういうことだと思いますか？</p>
@@ -433,21 +427,21 @@
                                 </div>
                                 
                                 <div class="my-response">
-                                    <p>前回の授業で、「デザインは、問題解決のためのもの」って習ったな。
+                                    <p>前回の授業で、「<strong>デザインは、問題解決のためのもの</strong>」って習ったな。
                                         だから、「デザインが上手い」っていうのは、
                                     鮮やかに問題を解決すること。みたいな感じがする。
                                     「鮮やかに」ってなんだろう。</p>
                                     
                                     <p>「気づかない間に」？「自然と」？
                                     見た目がいい、とかも普通にありそうだと思っちゃう。</p>
-                                    <p class="highlight">⭐️それがない時に生じる問題を、
+                                    <strong>⭐️それがない時に生じる問題を、
                                     問題だと感じさせないままに、
-                                    無くしておくこと。⭐️</p>
+                                    無くしておくこと。⭐️</strong>
                                     <p>みたいな気がするな……。うじゃうじゃ書いても仕方ないから、一旦提出するか。</p>
                                 </div>
 
-                                <div class="teacher-quote">                                    
-では、次の問いです：
+                                <div class="teacher-quote">                              
+                                    では、次の問いです：
                                     <h3>先生の質問：</h3>
                                     <p>「問題だと感じさせないままに解決されている」例、最近見た中で何かありますか？</p>
                                     <p>どんなメディアでもOKです（Web、アプリ、本、公共サイン、コンビニの陳列、etc…）<br>
@@ -457,7 +451,8 @@
                                 
                                 <div class="my-response">
                                     <p>ムズカシっ！
-                                    前回の授業の時に観察しちゃったネタだけど、３色ボールペンをしゃあないから使おう、、、それ以外が思いつかない、、1分迷うか。</p>
+                                    前回の授業の時に観察しちゃったネタだけど、３色ボールペンをしゃあないから使おう、、、それ以外が思いつかない、、<br>
+                                    やーでも、1分迷うか。</p>
                                     <p>あぁー、牛乳パックで、ひねるふたのやつ（コーヒーとか、ヨーグルトとかであるやつ）
                                     はいいな。開けるのに何の躊躇もない。そういえば牛乳パック開けるのってミスる時あるもんね。密封もできないし。。。</p>
                                     <p>うまいなと思った理由は、開けるために何も考えなくていい、ってことだよね</p>
@@ -472,7 +467,7 @@
                                 </div>
                                 
                                 <div class="my-response">
-                                    <p>先生が振り返って書いてくれた解説だと、「比較視点」「ユーザー体験の分析（認知負荷のこととか）」「感じさせない、という見えない価値」がポイントなのか。。。</p>
+                                    <p>先生が振り返って書いてくれた解説だと、「あるとないを比較する視点」「ユーザー体験の分析（認知負荷のこととか）」「感じさせない、という見えない価値」あたりがポイントなのか。。。</p>
                                     <p>どう応用できるか、か。
                                     デザインするときに、要素を作る・付け足す際に、アリナシVerを作るのはありかもな。
                                     後、何というか、「寝起きで使えるか」みたいな、認知負荷がかけられない状況のことを想定しまくる、とか？</p>
@@ -501,22 +496,28 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                    <div class="personal-note">
-                                        <p>ABテスト、とか、比較設計による効果検証、「ストレステスト」ってのがある？っぽい。</p>
-                                        <p>深い観察→抽象化→応用の３ステップ　＜これ、大概のもので使えそうな話だよなぁ、、、それを自分の身に染ませるのが大変だから、こういうメモ取ってんねんけどね。</p>
-                                    </div>
-                                </section>
+                                <div class="personal-note">
+                                    <p>ABテスト、とか、比較設計による効果検証、「ストレステスト」ってのがある？っぽい。</p>
+                                    <p>深い観察→抽象化→応用の３ステップ　＜これ、大概のもので使えそうな話だよなぁ、、、それを自分の身に染ませるのが大変だから、こういうメモ取ってんねんけどね。</p>
+                                </div>
+                            </section>
                         </details>
 
                         <details class="accordion-section">
-                            <summary>実践①：バナー画像の比較分析</summary>
+                            <summary>3. 実践：バナー画像の比較分析</summary>
                             <section id="practice1">
-                                <h2>実践①_2つのバナー画像を比べてみよう</h2>
-                                
                                 <!-- バナー画像の表示 -->
-                                <img src="img/ChatGPT Image 2025年3月28日 12_50_43.png" 
-                                     alt="バナー画像の比較_0328" 
-                                     width="500"/>
+                                <figure>
+                                    <img src="img/ChatGPT Image 2025年3月28日 12_50_43.png" 
+                                         alt="バナー画像の比較_0328" 
+                                         width="500"
+                                         style="display: block; 
+                                                margin-left: auto;
+                                                margin-right: auto;"
+                                         relative/>
+                                    <figcaption>先生が作ってくれた2つのバナー画像の比較<br>
+                                        （おりしも、2025/3/28付近は、画像生成がめっちゃ良くなったタイミングでした）</figcaption>
+                                </figure>
 
                                 <!-- 先生からの問いかけ -->
                                 <div class="teacher-quote">
@@ -566,8 +567,10 @@
 
                                 <!-- 個人メモ -->
                                 <div class="personal-note">
-                                    <p>メモ：デザイン視点での解釈、までいえないな。なるほど？何が、それを引き出しているのか、を次は考えるのか。。</p>
+                                    <p>当たり前だけど、書いてもらったデザイン視点での解釈、まで言えないな。<br>
+                                        なるほど？何が、それを引き出しているのか、を次は考えるのか。。</p>
                                 </div>
+
                                 <!-- 先生からの問いかけ（深める用） -->
                                 <div class="teacher-quote">
                                     <h3>🧠 次の問い（深める用）</h3>
@@ -593,22 +596,18 @@
                         </details>
 
                         <details class="accordion-section">
-                            <summary>実践②：問いのレベルを深める演習</summary>
-                            <section id="practice2">
-                                <h2>実践②_問いのレベルを深める演習</h2>
-                                
-                                <!-- 目的 -->
-                                <div class="purpose">
+                            <summary>4. 実践：問いのレベルを深める</summary>
+                            <section id="practice2">                                
+                                <!-- 先生からの問いかけ -->
+                                <div class="teacher-quote">
                                     <h3>＜目的＞</h3>
                                     <p>「なぜそう感じたのか？」を、より構造的に言語化できるようにする。<br>
                                     印象 ⇔ 要素 ⇔ 意図 のつながりを意識して観察を深める練習</p>
-                                </div>
 
-                                <!-- 先生からの問いかけ -->
-                                <div class="teacher-quote">
                                     <p><strong>🔹問い①：第一印象（主観）</strong><br>
                                     このデザイン、どんな印象を受けた？</p>
 
+                                    <h3>＜先生の質問＞</h3>
                                     <p><strong>🔸問い②：根拠（客観）</strong><br>
                                     そう感じたのは、<strong>どの要素（配置／配色／写真／余白など）</strong>から？</p>
 
@@ -622,7 +621,7 @@
                                 
                                 <!-- 個人メモ -->
                                 <div class="personal-note">
-                                    <p>メタメモ：(もうすでに〜)みたいな配慮が、そもそもえぐいよね。</p>
+                                    <p>(もうすでに〜)みたいに書いてくれる配慮が、とってもレベルが高い、えぐいよね。</p>
                                 </div>
 
                                 <!-- 自分の回答 -->
@@ -651,7 +650,7 @@
                                 
                                 <!-- 個人メモ -->
                                 <div class="personal-note">
-                                    <p>メタメモ：これ、型として身体に入れていくならば、表みたいな感じにして、気になったデザインでガリガリやっていけそうだな</p>
+                                    <p>型として身体に入れていくならば、表みたいな感じにして、気になったデザインでガリガリやっていけそうだな</p>
                                 </div>
 
                                 <!-- フィードバックテーブル -->
@@ -718,35 +717,87 @@
 
                                     <h4>🌱 今、育ったのはこんな力</h4>
                                     <table class="skill-table">
-                                        <thead>
-                                            <tr>
-                                                <th>力</th>
-                                                <th>内容</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>📌 比較観察力</td>
-                                                <td>バナーA/Bの違いから印象を分析できた</td>
-                                            </tr>
-                                            <tr>
-                                                <td>📌 抽象化力</td>
-                                                <td>"高級感＝余白×構成×配色"など構造で捉えられた</td>
-                                            </tr>
-                                            <tr>
-                                                <td>📌 意図読み取り力</td>
-                                                <td>背景にあるターゲットや行動目的を推測できた</td>
-                                            </tr>
-                                            <tr>
-                                                <td>📌 応用視点</td>
-                                                <td>観察を自分の制作・日常に活かす視点まで到達した</td>
-                                            </tr>
-                                        </tbody>
+                                        <tr>
+                                            <th>力</th>
+                                            <th>内容</th>
+                                        </tr>
+                                        <tr>
+                                            <td>📌 比較観察力</td>
+                                            <td>バナーA/Bの違いから印象を分析できた</td>
+                                        </tr>
+                                        <tr>
+                                            <td>📌 抽象化力</td>
+                                            <td>"高級感＝余白×構成×配色"など構造で捉えられた</td>
+                                        </tr>
+                                        <tr>
+                                            <td>📌 意図読み取り力</td>
+                                            <td>背景にあるターゲットや行動目的を推測できた</td>
+                                        </tr>
+                                        <tr>
+                                            <td>📌 応用視点</td>
+                                            <td>観察を自分の制作・日常に活かす視点まで到達した</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </section>
+                        </details>
+
+                        <details class="accordion-section">
+                            <summary>5. ホームワーク</summary>
+                            <div class="personal-note">
+                                <p>宿題は、エンジェル、見えない恋人のポスターについて行なった。</p>
+                                <p><strong>ぜひ、あなたもやってみてね！
+                                </strong></p>
+                                <p>ただ、この内容も一旦書きません！（正直、先生のFBをうまいことチューニングできなかったから……）<br>
+                                    ここが最も勉強になるはずのところなので、どう手に入れるか……
+                                </p>
+                            </div>
+
+                            <section id="homework">
+                                <div class="teacher-quote">
+                                    <h3>宿題の内容📝</h3>
+                                    <h4>📝 やること</h4>
+                                    <p>気になる1枚のデザインを選ぶ<br>
+                                    （Web・チラシ・看板・UIなど何でもOK）</p>
+
+                                    <h4>🔍 4つの観察ステップ</h4>
+                                    <table class="skill-table">
+                                        <tr>
+                                            <td>1️⃣ 第一印象</td>
+                                            <td>・どんな印象？<br>
+                                                ・どこに目がいった？<br>
+                                                ・誰向けだと思った？</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2️⃣ 要素の観察</td>
+                                            <td>・配色・写真・フォント<br>
+                                                ・余白・配置など<br>
+                                                ・どんな特徴がある？</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3️⃣ 印象の理由</td>
+                                            <td>・なぜそう感じたのか？<br>
+                                                ・どの要素が印象に影響している？</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4️⃣ 意図の推察</td>
+                                            <td>・誰に何を伝えるためのデザインだと思う？</td>
+                                        </tr>
                                     </table>
                                 </div>
                             </section>
                         </details>
                     </div>
+
+                    <p>今日はこれで終わり！<br>
+                        「観察」が大事そうですよ、ってことを学びましたね。<br>
+                        今日で終わらないように頑張りましょうね。<br>
+                        では、またね！
+                    </p>
+                    <p class="personal-note">
+                        そもそも、長めの文章を、多少読み得る状態に仕様とすること（記事を書くこと）が
+                        めっちゃむずでしたね、これも、練習していきましょう
+                    </p>
 
                     <div class="back-link">
                         <p><a href="index.html" class="btn">戻る</a></p>
@@ -754,24 +805,22 @@
                 </article>
             </main>
 
-            <aside>
-                <section class="profile">
-                    <h2>自己紹介</h2>
-                    <figure>
-                        <img src="img/_DSF5175.jpg" alt="むっぽの写真" width="200"/>
-                    </figure>
-                    <p>むっぽ/Shogo Yanagiです。1997年1月愛知県生まれ。<br>
-                        2021年に大学院（情報工学修士）を卒業したのち、
-                        経営コンサルティング企業に就職。<br>
-                        2024年2月に退職し、フリーランスとして活動している。Communicative bar HANABI、学術バーQ　のスタッフ。<br>
-                        歌を作って歌っている。<br>
-                    </p>
-                </section>
-            </aside>
         </div>
 
-        <footer id = "contact"> 
-            <p><a href="mailto:backsuu@gmail.com"> PLEASE E-MAIL ME ANYTIME.</a></p>
+        <footer id="contact"> 
+            <section class="profile">
+                <figure>
+                    <img src="img/_DSF5175.jpg" alt="むっぽの写真" width="160"/>
+                </figure>
+                <p style="font-size: 0.9em;">むっぽ/Shogo Yanagiです。1997年1月愛知県生まれ。<br>
+                    2021年に大学院（情報工学修士）を卒業したのち、
+                    経営コンサルティング企業に就職。<br>
+                    2024年2月に退職し、フリーランスとして活動している。Communicative bar HANABI、学術バーQ　のスタッフ。<br>
+                    歌を作って歌っている。<br>
+                </p>
+            </section>
+
+            <p><a href="mailto:backsuu@gmail.com">PLEASE E-MAIL ME ANYTIME.</a></p>
             <p>© 2025 MUPPO</p>
             <div style="display: flex; justify-content: center; gap: 10px;">
                 <a href="https://twitter.com/backsuu1" target="_blank" class="btn">Twitter</a>

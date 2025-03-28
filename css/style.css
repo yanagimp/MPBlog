@@ -123,6 +123,10 @@
                 overflow: hidden; /* カード内のコンテンツがはみ出さないようにする */
             }
 
+            .content-card article {
+                height: 400px; /* 高さを固定 */
+            }
+
             .content-card:hover {
                 transform: translateY(-3px);
                 box-shadow: 0 4px 6px rgba(249, 188, 96, 0.2);
