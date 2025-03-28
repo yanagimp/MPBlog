@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="css/style.css">
         <style>
             .teacher-quote {
-                background-color: #f5f5f5;
+                background-color: #e8f3f1;  /* 薄い青緑色 */
                 border-left: 4px solid #f9bc60;
                 padding: 15px;
                 margin: 20px 0;
@@ -20,19 +20,21 @@
             }
             
             .my-response {
+                background-color: #fff1e6;  /* 薄いピーチ色 */
                 margin: 15px 0;
                 padding-left: 20px;
                 border-left: 2px dashed #abd1c6;
             }
             
             .highlight {
-                background-color: #ffffd9;
+                background-color: #fffffe;
                 padding: 2px 5px;
                 border-radius: 3px;
+                color: #004643;
             }
             
             .teacher-feedback {
-                background-color: #e8f4f8;
+                background-color: #e3f6f5;  /* 薄い水色 */
                 border-left: 4px solid #abd1c6;
                 padding: 15px;
                 margin: 20px 0;
@@ -51,6 +53,7 @@
                 padding: 1em;
                 border: 1px solid #abd1c6;
                 border-radius: 6px;
+                background-color: #fffffe;
             }
 
             .accordion-section summary {
@@ -62,11 +65,11 @@
             }
 
             .accordion-section summary:hover {
-                background-color: #f5f5f5;
+                background-color: #abd1c6;
             }
 
             .table-of-contents {
-                background-color: #f9f9f9;
+                background-color: #fffffe;
                 padding: 2rem;
                 border-radius: 8px;
                 margin: 2rem 0;
@@ -112,7 +115,7 @@
             .toc-section p {
                 margin: 0.5rem 0;
                 font-size: 0.7em;
-                color: #666;
+                color: #abd1c6;
                 display: inline;
                 margin-left: 10px;
                 text-align: left;
@@ -151,6 +154,7 @@
                 width: 100%;
                 border-collapse: collapse;
                 margin: 1rem 0;
+                background-color: #fffffe;
             }
 
             .feedback-table th,
@@ -161,13 +165,13 @@
             }
 
             .feedback-table th {
-                background-color: #f8f9fa;
+                background-color: #fffffe;
                 font-weight: bold;
                 color: #004643;
             }
 
             .feedback-table tr:hover {
-                background-color: #f5f5f5;
+                background-color: #abd1c6;
             }
 
             /* スキルテーブルのスタイルを追加 */
@@ -186,13 +190,13 @@
             }
 
             .skill-table th {
-                background-color: #f0f7ff;
+                background-color: #fffffe;
                 color: #004643;
                 font-weight: bold;
             }
 
             .skill-table tr:hover {
-                background-color: #f8f9fa;
+                background-color: #abd1c6;
             }
 
             .skill-table td:first-child {
@@ -202,7 +206,7 @@
 
             /* 目的セクションのスタイルを追加 */
             .purpose {
-                background-color: #fff3e0;
+                background-color: #fffffe;
                 border-left: 4px solid #f9bc60;
                 padding: 15px;
                 margin: 20px 0;
@@ -225,14 +229,25 @@
 
             /* 個人メモセクションのスタイルを追加 */
             .personal-note {
-                background-color: #f0f4c3;
-                border-left: 4px solid #f9bc60;
-                padding: 15px;
-                margin: 20px 0;
-                border-radius: 5px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                font-style: italic;
+                position: absolute;
+                right: -160px;  /* 左側にはみ出す量を調整 */
+                width: 180px;
+                background-color: #fff1e6;
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 8px;
                 font-size: 0.8em;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            .personal-note::after {
+                content: '';
+                position: absolute;
+                left: -10px;
+                top: 15px;
+                border-width: 10px 10px 10px 0;
+                border-style: solid;
+                border-color: transparent #fff1e6 transparent transparent;
             }
 
             .personal-note p {
@@ -243,7 +258,7 @@
 
             /* チャプターサマリーのスタイルを追加 */
             .chapter-summary {
-                background-color: #e8f5e9;
+                background-color: #fffffe;
                 border-left: 4px solid #f9bc60;
                 padding: 15px;
                 margin: 20px 0;
@@ -265,6 +280,34 @@
                 line-height: 1.6;
                 color: #001e1d;
                 font-weight: 500;
+            }
+
+            /* 記事全体の幅を調整 */
+            .layout {
+                width: 80%;
+                margin: 0 auto;
+                position: relative;  /* 子要素の配置の基準点として設定 */
+            }
+
+            /* メインコンテンツエリアに余白を追加 */
+            main {
+                margin-left: 250px;  /* personal-noteの幅分の余白 */
+            }
+
+            @media (max-width: 1200px) {
+                .personal-note {
+                    position: static;
+                    width: auto;
+                    margin: 20px 0;
+                }
+
+                .personal-note::after {
+                    display: none;
+                }
+
+                main {
+                    margin-left: 0;
+                }
             }
 
         </style>
@@ -318,7 +361,7 @@
                                 </div>
                             <div class="toc-sections">
                                 <div class="toc-section">
-                                    <h3><a href="#lesson2" class="toc-link">1. デザインの観察力を磨く！実践的なトレーニングを作った</a></h3>
+                                    <h3><a href="#lesson2" class="toc-link">1. 「デザイン観察力トレーニング」の授業を作ってもらおう</a></h3>
                                     <p>独習のためのAIカリキュラム作成について</p>
                                     <br>
                                     
@@ -341,7 +384,7 @@
                         </nav>
 
                         <details class="accordion-section">
-                            <summary>ファシリ先生の観察力トレーニングを作った</summary>
+                            <summary>「デザイン観察力トレーニング」の授業を作ってもらおう</summary>
                             <section id="lesson-making">
                                 
                                 <div class="chapter-summary">
@@ -370,14 +413,18 @@
                         </details>
 
                             <details class="accordion-section">
-                                <summary>観察力トレーニング入門</summary>
-                                ＜この章のポイント＞先生の問いかけを通じて、デザインの観察力を磨く。
-                                「デザインが上手い」って、あなたにとって何で、
-                                それを制作に活かすなら、どんなふうに活かせますか？
-                                
-                                ＜注意書き＞問いかけと、僕の回答をメインに、省略しながら記載しています。
-                                会話をフルで読みたい場合は、
-                                <a href = "mailto:backsuu@gmail.com">ご連絡ください。</a>
+                                <summary>「デザイン観察力トレーニング」入門</summary>
+                                <div class="chapter-summary">
+                                    <h4>この章のポイント</h4>
+                                    <p>先生の問いかけを通じて、デザインの観察力を磨く。
+                                    「デザインが上手い」って、あなたにとって何で、
+                                    それを制作に活かすなら、どんなふうに活かせますか？</p>
+                                </div>
+                                <div class="personal-note">
+                                    <p>＜注意書き＞問いかけと、僕の回答をメインに、省略しながら記載しています。
+                                    会話をフルで読みたい場合は、
+                                    <a href = "mailto:backsuu@gmail.com">ご連絡ください。</a></p>
+                                </div>
 
                                 <section id ="lesson2-intro">
                                 <p>早速始まった、ファシリテータータイプ（問いかけを重視する）の先生の授業。
@@ -460,11 +507,10 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                    <h3>メタメモ</h3>
-                                    <ul>
-                                        <li>ABテスト、とか、比較設計による効果検証、「ストレステスト」ってのがある？っぽい。</li>
-                                        <li>深い観察→抽象化→応用の３ステップ　＜これ、大概のもので使えそうな話だよなぁ、、、それを自分の身に染ませるのが大変だから、こういうメモ取ってんねんけどね。</li>
-                                    </ul>
+                                    <div class="personal-note">
+                                        <p>ABテスト、とか、比較設計による効果検証、「ストレステスト」ってのがある？っぽい。</p>
+                                        <p>深い観察→抽象化→応用の３ステップ　＜これ、大概のもので使えそうな話だよなぁ、、、それを自分の身に染ませるのが大変だから、こういうメモ取ってんねんけどね。</p>
+                                    </div>
                                 </section>
                         </details>
 
