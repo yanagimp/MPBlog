@@ -1,6 +1,6 @@
 ---
 layout: default
-title:MUPPO Blog
+title:
 ---
 
 <ul class="post-list">
