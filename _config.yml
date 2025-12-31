@@ -1,0 +1,11 @@
+title: My Blog
+markdown: kramdown
+
+plugins:
+  - jekyll-paginate
+
+paginate: 10
+paginate_path: "/all-articles/page:num/"
+
+# 任意：タイムゾーン（日本）
+timezone: Asia/Tokyo

@@ -29,10 +29,10 @@
             <div class="profile-info">
                 <p>2021年に情報工学の修士を取得し、
                     新卒で経営コンサル企業に入社し、3年弱勤務。<br>
-                    現在は、学術バー・
+                    学術バー・
                     Communicativeバーのスタッフ、
-                    ボーカルコーチとして活動中。<br>
-                    分からないことだらけで、「どうあると楽しいか」実験中。</p>
+                    ボーカルコーチを経て、改めて経営コンサルティング企業にて勤務。<br>
+                    分からないことだらけ。</p>
                 <div class="skills">
                    <!-- スキルや経験などを追加できます -->
                     #経営コンサル / #バースタッフ / #ボーカルコーチ / #情報工学(自然言語処理) /<br>
@@ -62,96 +62,45 @@
                     </p>
                 </div>
             </div>
-            <!-- 
-            ご質問ありがとうございます！現在のコードでは、カードが浮かんで横に移動するような
-            インタラクティブな機能は実装されていません。これを実現するには、JavaScriptと
-            追加のCSSが必要です。例えば、カルーセルやスライダーのような機能を実装したい場合は、
-            Swiper.jsやSlick.jsなどのライブラリを使用するか、カスタムのJavaScriptコードを
-            書く必要があります。実装方法についてさらに詳しく知りたい場合は、お気軽にお尋ねください！
-            -->
         </section>
-        <!-- コメント: 文字がカードに収まるようにするには、
-         CSSでフォントサイズを調整することができます。
-         例えば、.content-card p { font-size: calc(1em + 0.5vw); } のように指定します。 -->
-
         <section id="articles">
             <h2>Blog</h2>
+          
             <div class="swiper">
-                <div class="swiper-wrapper">
-                    <article class="swiper-slide" style = "text-align: center;">
-                        <div class="content-card article">
-                            <img src="img/image_screenshot_250326.png" alt="ギャル師匠ブログの画像"/>
-                            <h3><a href="article-1.html">はじめてのHTML挑戦</a></h3>
-                            <p class="excerpt">
-                                はじめてのHTML挑戦について書きます。
-                            </p>
-                            <a href="article-1.html" class="btn">続きを読む</a>
-                            <p class="article-date">2025.03.25</p>
-                        </div>
-                    </article>
-
-                    <article class="swiper-slide">
-                        <div class="content-card article" style="text-align: center;">
-                            <img src="img/top_250326.png" alt="トップページの画像" width="500"/>
-                            <h3><a href="article-2.html">おしゃれサイトにしたい、どうすればいいんだ</a></h3>
-                            <p class="excerpt">
-                                おしゃれなサイトにしたいと思ってしまっている。<br>
-                                当初の目的は、プログラミングのための勉強だったのに。
-                            </p>
-                            <a href="article-2.html" class="btn">続きを読む</a>
-                            <p class="article-date">2025.03.26</p>
-                        </div>
-                    </article>
-
-                    <article class="swiper-slide" style="text-align: center;">
-                        <div class="content-card article" style="text-align: center;">
-                            <h3><a href="article-3.html">28歳、ぐねぐねの道</a></h3>
-                            <p class="excerpt">
-                                「理解と体験の乖離」に悩みながら、
-                                「しなやかで博識な理想の爺さん」という将来像を見出すも、
-                                その道筋の不確かさに揺れる思考の記録。
-                            </p>
-                            <a href="article-3.html" class="btn">続きを読む</a>
-                            <p class="article-date">2025.03.27</p>
-                        </div>
-                    </article>
-
-                    <article class="swiper-slide">
-                        <div class="content-card article" style="text-align: center;">
-                            <img src="img/Screenshot_デザイントレーニングレッスン2.png" alt="デザイン観察力トレーニングの画像" width="300" height="90"/>
-                            <h3><a href="article-4_design_sololearning_memo.html">未経験独習はどうやってやるんだ！<br>
-                                「デザイン観察力トレーニング」の授業を作って受けてみた</a></h3>
-                            <p class="excerpt">
-                                生成AIに学校の先生役をやってもらった記録。<br>
-                                前途多難ではある（記事を修正し続けています）
-                            </p>
-                            <a href="article-4_design_sololearning_memo.html" class="btn">続きを読む</a>
-                            <p class="article-date">2025.03.28</p>
-                        </div>
-                    </article>
-                    
-                    <article class="swiper-slide">
-                        <div class="content-card article">
-                            <img src="img/early-summer.png" alt="Early Summer" width="300">
-                            <h3><a href="article-7.html">2025年4月2日、疲れたね</a></h3>
-                            <p class="excerpt">
-                                なんか勢いで作ろうとしたけど、当たり前に無理だったわ。地道に積み重ねてください。
-                            </p>
-                            <a href="article-7.html" class="btn">続きを読む</a>
-                            <p class="article-date">2025.04.02</p>
-                        </div>
-                    </article>
-                </div>
-                <!-- ナビゲーションボタンを追加 -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <!-- ページネーションを追加 -->
-                <div class="swiper-pagination"></div>
+              <div class="swiper-wrapper">
+                {% assign latest_posts = site.posts | slice: 0, 10 %}
+                {% for post in latest_posts %}
+                <article class="swiper-slide" style="text-align:center;">
+                  <div class="content-card article" style="text-align:center;">
+                    {% if post.image %}
+                      <img src="{{ post.image }}" alt="{{ post.title }}" />
+                    {% endif %}
+          
+                    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          
+                    {% if post.excerpt %}
+                    <p class="excerpt">
+                      {{ post.excerpt | strip_html }}
+                    </p>
+                    {% endif %}
+          
+                    <a href="{{ post.url }}" class="btn">続きを読む</a>
+                    <p class="article-date">{{ post.date | date: "%Y.%m.%d" }}</p>
+                  </div>
+                </article>
+                {% endfor %}
+              </div>
+          
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
             </div>
-            <div class="view-all-articles" style="text-align: center; margin-top: 15px;">
-                <a href="all-articles.html" class="btn view-all-btn">すべての記事を見る</a>
+          
+            <div class="view-all-articles" style="text-align:center;margin-top:15px;">
+              <a href="/all-articles.html" class="btn view-all-btn">すべての記事を見る</a>
             </div>
-        </section>
+          </section>
+          
     </main>
 
     <footer id = "contact"> 
@@ -165,42 +114,22 @@
     </footer>
 
     <script>
-        // Swiperの初期化
-        const swiper = new Swiper('.swiper', {
-            // オプション
+        window.addEventListener('load', () => {
+          const swiper = new Swiper('.swiper', {
             loop: true,
             slidesPerView: 3,
             spaceBetween: 10,
             centeredSlides: true,
-            // ナビゲーションボタン
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            // ページネーション
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            // レスポンシブ対応
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            pagination: { el: '.swiper-pagination', clickable: true },
             breakpoints: {
-                // 画面幅が320px以下の場合
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 10
-                },
-                // 画面幅が768px以下の場合
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 10
-                },
-                // 画面幅が1024px以下の場合
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 10
-                }
+              320: { slidesPerView: 1, spaceBetween: 10 },
+              768: { slidesPerView: 2, spaceBetween: 10 },
+              1024: { slidesPerView: 3, spaceBetween: 10 }
             }
+          });
         });
-    </script>
+      </script>
+      
 </body>
 </html>

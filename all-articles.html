@@ -1,143 +1,31 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>むっぽブログ - 全記事一覧</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/all-articles.css">
-    </head>
-    
-    <body>
-        <header class="site-header">
-            <div class="header-content">
-                <h1 class="site-title">むっぽブログ</h1>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="all-articles.html" class="active">Blog</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+---
+layout: default
+title: All Articles
+---
 
-        <main class="articles-container">
-            <h2 class="page-title">全記事一覧</h2>
-            
-            <div class="article-list">
-                <article class="article-card">
-                    <div class="article-image-container">
-                        <img src="img/20250405_1.jfif" alt="ピンタレスト模写の写真" class="article-image">
-                    </div>
-                    <div class="article-content">
-                        <div class="article-header">
-                            <p class="article-date">2025.04.05</p>
-                            <h2><a href="article-8.html">2025年4月5日14時、調子はどう</a></h2>
-                        </div>  
-                        <p class="excerpt">
-                            調子はどうよ。<br>
-                            まぁまぁ春めいてきて、悪くはないよな。せっかく晴れた土曜日だし、出かけたりしている人が多いんだろうか。<br>                            
-                        </p>
-                        
-                        <a href="article-8.html" class="read-more">続きを読む</a>
-                    </div>
-                </article>
-                <article class="article-card">
-                    <div class="article-image-container">
-                        <img src="img/early-summer.png" alt="Early Summer" class="article-image">
-                    </div>
-                    <div class="article-content">
-                        <div class="article-header">
-                            <p class="article-date">2025.04.02</p>
-                            <h2><a href="article-7.html">2025年4月2日、疲れたね</a></h2>
-                        </div>
-                        <p class="excerpt">
-                            なんか勢いで作ろうとしたけど、当たり前に無理だったわ。地道に積み重ねてください。
-                        </p>
-                        <a href="article-7.html" class="read-more">続きを読む</a>
-                    </div>
-                </article>
+<main>
+  <h2>すべての記事</h2>
 
-                <article class="article-card">
-                    <div class="article-image-container">
-                        <img src="img/Screenshot_デザイントレーニングレッスン2.png" alt="デザイン観察力トレーニングの画像" class="article-image">
-                    </div>
-                    <div class="article-content">
-                        <div class="article-header">
-                            <p class="article-date">2025.03.28</p>
-                            <h2><a href="article-4_design_sololearning_memo.html">未経験独習はどうやってやるんだ！「デザイン観察力トレーニング」の授業を作って受けてみた</a></h2>
-                        </div>
-                        <p class="excerpt">
-                            生成AIに学校の先生役をやってもらった記録。<br>
-                            前途多難ではある（記事を修正し続けています）
-                        </p>
-                        <a href="article-4_design_sololearning_memo.html" class="read-more">続きを読む</a>
-                    </div>
-                </article>
+  <div class="articles-grid">
+    {% for post in paginator.posts %}
+      <article class="content-card article">
+        {% if post.image %}
+          <img src="{{ post.image }}" alt="{{ post.title }}">
+        {% endif %}
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <p class="excerpt">{{ post.excerpt | strip_html }}</p>
+        <p class="article-date">{{ post.date | date: "%Y.%m.%d" }}</p>
+      </article>
+    {% endfor %}
+  </div>
 
-                <article class="article-card">
-                    <div class="article-image-container">
-                        <img src="img/top_250326.png" alt="トップページの画像" class="article-image">
-                    </div>
-                    <div class="article-content">
-                        <div class="article-header">
-                            <p class="article-date">2025.03.27</p>
-                            <h2><a href="article-3.html">28歳、ぐねぐねの道</a></h2>
-                        </div>
-                        <p class="excerpt">
-                            「理解と体験の乖離」に悩みながら、
-                            「しなやかで博識な理想の爺さん」という将来像を見出すも、
-                            その道筋の不確かさに揺れる思考の記録。
-                        </p>
-                        <a href="article-3.html" class="read-more">続きを読む</a>
-                    </div>
-                </article>
-
-                <article class="article-card">
-                    <div class="article-image-container">
-                        <img src="img/image_screenshot_250326.png" alt="ギャル師匠ブログの画像" class="article-image">
-                    </div>
-                    <div class="article-content">
-                        <div class="article-header">
-                            <p class="article-date">2025.03.26</p>
-                            <h2><a href="article-2.html">おしゃれサイトにしたい、どうすればいいんだ</a></h2>
-                        </div>
-                        <p class="excerpt">
-                            おしゃれなサイトにしたいと思ってしまっている。<br>
-                            当初の目的は、プログラミングのための勉強だったのに。
-                        </p>
-                        <a href="article-2.html" class="read-more">続きを読む</a>
-                    </div>
-                </article>
-
-                <article class="article-card">
-                    <div class="article-image-container">
-                        <img src="img/article-1.png" alt="はじめてのHTML挑戦の画像" class="article-image">
-                    </div>
-                    <div class="article-content">
-                        <div class="article-header">
-                            <p class="article-date">2025.03.25</p>
-                            <h2><a href="article-1.html">はじめてのHTML挑戦</a></h2>
-                        </div>
-                        <p class="excerpt">
-                            はじめてのHTML挑戦について書きます。
-                        </p>
-                        <a href="article-1.html" class="read-more">続きを読む</a>
-                    </div>
-                </article>
-            </div>
-        </main>
-
-        <footer class="site-footer">
-            <div class="footer-content">
-                <p class="contact"><a href="mailto:backsuu@gmail.com">PLEASE E-MAIL ME ANYTIME.</a></p>
-                <p class="copyright">© 2025 MUPPO</p>
-                <div class="social-links">
-                    <a href="https://twitter.com/backsuu1" target="_blank" class="social-btn">Twitter</a>
-                    <a href="https://www.instagram.com/muttsuri_noppo" target="_blank" class="social-btn">Instagram</a>
-                    <a href="https://ko-fi.com/muttsurinoppo" target="_blank" class="social-btn">Buy Me a Coffee</a>
-                </div>
-            </div>
-        </footer>
-    </body>
-</html> 
+  <nav class="pagination">
+    {% if paginator.previous_page %}
+      <a class="btn" href="{{ paginator.previous_page_path }}">前へ</a>
+    {% endif %}
+    <span>Page {{ paginator.page }} / {{ paginator.total_pages }}</span>
+    {% if paginator.next_page %}
+      <a class="btn" href="{{ paginator.next_page_path }}">次へ</a>
+    {% endif %}
+  </nav>
+</main>
