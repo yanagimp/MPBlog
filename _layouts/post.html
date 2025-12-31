@@ -18,11 +18,13 @@ layout: default
     <p class="article-date">{{ page.date | date: "%Y.%m.%d" }}</p>
   </header>
 
+  {% if page.toc != false %}
   <!-- 目次（既存CSS: .table-of-contents を再利用） -->
   <aside class="table-of-contents" id="js-toc" aria-label="目次">
     <h2>目次</h2>
     <div class="toc-sections" id="js-toc-body"></div>
   </aside>
+  {% endif %}
 
   <div class="post-body" id="js-post-body">
     {{ content }}

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>おしゃれなサイトにしたい、どうすればいいんだ | My Blog</title>
+
+  <!-- メインCSS -->
+  <link rel="stylesheet" href="/MPBlog/css/style.css">
+
+  <!-- ページ固有CSS（必要なページだけ） -->
+  
+
+  <!-- Swiper CSS（全ページ共通でOK） -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+
+<body>
+
+  <main class="container">
+    <!-- 上部タブ（既存CSSの nav スタイルを再利用） -->
+<nav>
+  <ul>
+    <li><a href="/MPBlog/#about">About</a></li>
+    <li><a href="/MPBlog/#works">Works/Plays</a></li>
+    <li><a href="/MPBlog/#articles">Blog</a></li>
+    <li><a href="/MPBlog/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<article class="post">
+  <header>
+    <h1>おしゃれなサイトにしたい、どうすればいいんだ</h1>
+    <p class="article-date">2025.03.26</p>
+  </header>
+
+  
+  <!-- 目次（既存CSS: .table-of-contents を再利用） -->
+  <aside class="table-of-contents" id="js-toc" aria-label="目次">
+    <h2>目次</h2>
+    <div class="toc-sections" id="js-toc-body"></div>
+  </aside>
+  
+
+  <div class="post-body" id="js-post-body">
+                <main>
+
+                <p>おしゃれなサイトにしたいと思ってしまっている。当初の目的は、プログラミングのための勉強だったのに。</p>
+
+                <p>ブログを作っていた当初の目的は、HTMLとCSSの理解です。そうですね？そして、その目的は何のためのものだったのか？というと、自分のPCのログイン・ログアウト時間を記録するWebアプリケーションを作ることだったり、ChatGPT２人と自分でおしゃべりできるGPTeidan（鼎談）を作ることだったのです。</p>
+
+                <p>正直、何となくは理解が進んだので、本当はもっと、Webアプリケーションを作る為に役に立ちそうな方の勉強ができる/した方がいいんですよ。</p>
+
+                <p>けどね、ブログ作り始めちゃったじゃないですか。そしたら、自分のサイトとして、ちゃんといい感じにしたくなっちゃったんですよね。</p>
+
+                <p>せっかくだし、ポートフォリオみたいにしたいじゃないですか。。。最近、デザイン学校を出た人のポートフォリオみてテンション上がったし。。。友人が作ってていいな、って思ったし。。。Carrdのサイトだとちょっと物足りなかったし。。。文章書くのも、嫌いじゃないし。。。だからね、当初の目的は逸れつつも、やっていこうと思いますよ。</p>
+
+                <p>ひとまず、タスクリストはちゃんと作ったし、いい感じの見た目にする為に、リファレンスをPinterestで探しに行ったし。今の所、トップページのやつは、ガッツリ人のデザインを参考にしているので、もう少し、複数の要素を組み合わせていきたいな、と思っている。</p>
+
+                <img src="/MPBlog/img/top_250326.png" alt="トップページの画像" width="500"/>
+
+                <p>学びですよ。別にね、エンジニアになるわけでも、デザイナーになるわけでもないんですが、28歳男性、色々考えないわけでもないんですよ。ひとまずは、興味のあることをひたすら、ちゃんと時間をかけてやっていきたいなと思っています。目指せ、穏やか博識ジジイ！</p>
+
+                <p>頑張ってやっていきましょうね、それでは、また。</p>
+
+                <p><a href="/MPBlog/" class="btn">戻る</a></p>
+
+  </div>
+
+</article>
+
+<nav class="post-nav" aria-label="前後の記事">
+  <div>
+    
+      <a class="btn" href="/MPBlog/2025/03/25/first-html.html" style="margin-bottom: 10px;">
+        ← 前の記事：はじめてのHTML挑戦
+      </a>
+    
+  </div>
+
+  <div>
+    
+      <a class="btn" href="/MPBlog/2025/03/27/gunegune.html" style="margin-bottom: 10px;">
+        次の記事：28歳、ぐねぐねの道 →
+      </a>
+    
+  </div>
+</nav>
+
+<aside>
+    <section class="profile">
+      <h2>自己紹介</h2>
+      <figure>
+        <img src="/MPBlog/img/Muppo_prof.jpg" alt="むっぽの写真" width="200"/>
+      </figure>
+      <p>むっぽ/Shogo Yanagiです。1997年1月愛知県生まれ。<br>
+        2021年に情報工学の修士を取得し、
+        新卒で経営コンサル企業に入社し、3年弱勤務。<br>
+        学術バー・Communicativeバーのスタッフ、
+        ボーカルコーチを経て、改めて経営コンサルティング企業にて勤務。<br>
+        歌を作って歌っている。<br>
+      </p>
+    </section>
+  </aside>
+  
+<footer id="contact">
+    <div class="container"> 
+      <h2>お問い合わせ</h2>
+      <p>
+        <a href="mailto:backsuu@gmail.com">ご連絡はこちら!</a>
+      </p>
+    </div>
+  </footer>
+  
+
+<script>
+  window.addEventListener('load', () => {
+    const postBody = document.getElementById('js-post-body');
+    const toc = document.getElementById('js-toc');
+    const tocBody = document.getElementById('js-toc-body');
+    if (!postBody || !toc || !tocBody) return;
+
+    // h2/h3 を拾って目次を作る（必要なら h4 も追加OK）
+    const headings = postBody.querySelectorAll('h2, h3');
+
+    // 見出しが少ない場合は目次を非表示（好みで閾値調整OK）
+    if (headings.length < 2) {
+      toc.style.display = 'none';
+      return;
+    }
+
+    // id が無い見出しに id を付ける
+    const slugify = (s) =>
+      s.trim()
+        .toLowerCase()
+        .replace(/[^\w\u3040-\u30ff\u3400-\u9fff\u3005\u30a0-\u30ffー]+/g, '-') // 日本語も雑に許可
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+
+    const used = new Set();
+    const ensureUniqueId = (base) => {
+      let id = base || 'section';
+      let i = 1;
+      while (used.has(id) || document.getElementById(id)) {
+        id = `${base}-${i++}`;
+      }
+      used.add(id);
+      return id;
+    };
+
+    // 目次DOM構築（あなたのCSSの toc-* を使う）
+    // 構造は：.toc-sections の下に <a> を並べるだけでもOK
+    // ただ、既存CSSに合わせて .toc-section を使う
+    headings.forEach(h => {
+      const text = h.textContent.trim();
+      if (!text) return;
+
+      if (!h.id) {
+        h.id = ensureUniqueId(slugify(text));
+      }
+
+      const level = h.tagName.toLowerCase(); // h2 / h3
+      const a = document.createElement('a');
+      a.href = `#${h.id}`;
+      a.className = 'toc-section';
+      a.style.display = 'block';
+      a.style.textDecoration = 'none';
+
+      // h2/h3で少しインデント（必要なければ削ってOK）
+      a.style.marginLeft = (level === 'h3') ? '16px' : '0';
+
+      // 見た目はCSS側に寄せたいので、テキストはシンプルに
+      const title = document.createElement('h3');
+      title.textContent = text;
+      title.style.margin = '0';
+
+      a.appendChild(title);
+      tocBody.appendChild(a);
+    });
+  });
+</script>
+
+
+  </main>
+
+  <!-- Swiper JS（body末尾） -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</body>
+</html>

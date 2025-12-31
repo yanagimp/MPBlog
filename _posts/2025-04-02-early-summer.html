@@ -1,32 +1,11 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="UTF-8" />
-        <title>2025年4月2日、疲れたね</title>
-        <!-- 
-            linkタグ: 外部リソース（ここではCSSファイル）をHTMLに関連付けるためのタグ
-            rel属性: リンクされるリソースとの関係性を指定（ここでは"stylesheet"でCSSスタイルシートであることを示す）
-            href属性: リンク先のファイルパスを指定（ここでは"css/style.css"でcssフォルダ内のstyle.cssファイルを参照）
-        -->
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    
-    <body>
-        <header>
-            <nav>
-                <ul>
-                    <li><a href = "#about">About</a></li>
-                    <li><a href = "#works">Works/Plays</a></li>
-                    <li><a href = "#articles">Blog</a></li>
-                    <li><a href = "#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+---
+layout: post
+title: "2025年4月2日、疲れたね"
+date: 2025-04-02
+excerpt: "真面目にやろうとしたら疲れちゃった人"
+image: /img/early-summer.png
+---
 
-        <div class="layout">
-            <main>
-                <article>
-                    <h1>2025年4月2日、疲れたね</h1>
                     
                     <section>
                         <h3>日々の思考</h3>
@@ -75,7 +54,7 @@
                         </p>
                         
                         <div style="text-align: center;">
-                            <img src="img/early-summer.png" alt="Early Summer" width="300">
+                            <img src="{{ '/img/early-summer.png' | relative_url}}" alt="Early Summer" width="300">
                         </div>
                         
                         <p>
@@ -89,36 +68,4 @@
                         </p>
                     </section>
 
-
-                    <div class="back-link">
-                        <p><a href="index.html" class="btn">戻る</a></p>
-                    </div>
-                </article>
-            </main>
-
-            <aside>
-                <section class="profile">
-                    <h2>自己紹介</h2>
-                    <figure>
-                        <img src="img/_DSF5175.jpg" alt="むっぽの写真" width="200"/>
-                    </figure>
-                    <p>むっぽ/Shogo Yanagiです。1997年1月愛知県生まれ。<br>
-                        2021年に大学院（情報工学修士）を卒業したのち、
-                        経営コンサルティング企業に就職。<br>
-                        2024年2月に退職し、フリーランスとして活動している。Communicative bar HANABI、学術バーQ　のスタッフ。<br>
-                        歌を作って歌っている。<br>
-                    </p>
-                </section>
-            </aside>
-        </div>
-
-        <footer id="contact">
-            <div class="container"> 
-                <h2>お問い合わせ</h2>
-                <p><a href="mailto:backsuu@gmail.com">ご連絡はこちら!</a></p>
-            </div>
-        </footer>
-
-        <script src="js/main.js"></script>
-    </body>
-</html>
+                    <p><a href="{{ '/' | relative_url }}" class="btn">戻る</a></p>

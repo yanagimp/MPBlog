@@ -1,197 +1,12 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="UTF-8" />
-        <title>未経験デザイン独習メモ_観察力トレーニング</title>
-        <link rel="stylesheet" href="css/style.css">
-        <style>
-            .teacher-quote {
-                background-color: #e8f3f1;
-                border-left: 4px solid #f9bc60;
-                padding: 15px;
-                margin: 20px 0;
-                border-radius: 5px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            }
-            
-            .my-response {
-                background-color: #fffffe;
-                margin: 15px 0;
-                padding-left: 20px;
-                border-left: 2px dashed #abd1c6;
-            }
-            
-            .highlight {
-                background-color: #fffffe;
-                padding: 2px 5px;
-                border-radius: 3px;
-                color: #004643;
-            }
-            
-            .teacher-feedback {
-                background-color: #e3f6f5;
-                border-left: 4px solid #abd1c6;
-                padding: 15px;
-                margin: 20px 0;
-                border-radius: 5px;
-            }
-            
-            h2 {
-                border-bottom: 2px solid #f9bc60;
-                padding-bottom: 10px;
-                margin-top: 30px;
-                color: #004643;
-            }
-
-
-            .feedback-table {
-                width: 100%;
-                border-collapse: collapse;
-                margin: 1rem 0;
-                background-color: #fffffe;
-            }
-
-            .feedback-table th,
-            .feedback-table td {
-                padding: 0.8rem;
-                border: 1px solid #abd1c6;
-                text-align: left;
-            }
-
-            .feedback-table th {
-                background-color: #fffffe;
-                font-weight: bold;
-                color: #004643;
-            }
-
-            .feedback-table tr:hover {
-                background-color: #abd1c6;
-            }
-
-            .skill-table {
-                width: 100%;
-                border-collapse: collapse;
-                margin: 1rem 0;
-                background-color: #fffffe;
-            }
-
-            .skill-table th,
-            .skill-table td {
-                padding: 1rem;
-                border: 1px solid #abd1c6;
-                text-align: left;
-            }
-
-            .skill-table th {
-                background-color: #fffffe;
-                color: #004643;
-                font-weight: bold;
-            }
-
-            .skill-table tr:hover {
-                background-color: #abd1c6;
-            }
-
-            .skill-table td:first-child {
-                font-weight: bold;
-                color: #004643;
-            }
-
-            .personal-note {
-                position: absolute;
-                right: -220px;
-                width: 180px;
-                background-color: #fff1e6;
-                padding: 1rem;
-                margin: 0;
-                border-radius: 8px;
-                font-size: 0.8em;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            }
-
-            .personal-note::before {
-                content: '';
-                position: absolute;
-                left: -10px;
-                top: 15px;
-                border-width: 10px 10px 10px 0;
-                border-style: solid;
-                border-color: transparent #fff1e6 transparent transparent;
-            }
-
-            .personal-note p {
-                margin: 0;
-                line-height: 1.6;
-                color: #004643;
-            }
-
-
-            .layout {
-                width: 80%;
-                margin: 0 auto;
-                position: relative;
-                display: grid;
-                grid-template-columns: 1fr minmax(auto, 800px) 1fr;
-                gap: 2rem;
-                max-width: 1400px;
-            }
-
-            main {
-                position: relative;
-                grid-column: 2;
-                overflow: visible;
-            }
-
-            .article-sections {
-                position: relative;
-                overflow: visible;
-            }
-
-            .accordion-section {
-                position: relative;
-                overflow: visible;
-            }
-
-            @media (max-width: 1200px) {
-                .layout {
-                    grid-template-columns: 1fr;
-                    width: 95%;
-                }
-
-                main {
-                    grid-column: 1;
-                }
-
-                .personal-note {
-                    position: static;
-                    width: auto;
-                    margin: 1rem 0;
-                }
-
-                .personal-note::before {
-                    display: none;
-                }
-            }
-        </style>
-    </head>
-    
-    <body>
-        <nav>
-            <ul>
-                <li><a href="index.html">About</a></li>
-                <li><a href="index.html#works">Works/Plays</a></li>
-                <li><a href="index.html#articles">Blog</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-
-        <div class="layout">
-            <main>
-                <article>
-                    <h1>未経験独習はどうやってやるんだ！<br>
-                        「デザイン観察力トレーニング」の授業を作って受けてみた
-                    </h1>
-                    
+---
+layout: post
+title: "未経験独習はどうやってやるんだ！「デザイン観察力トレーニング」の授業を作って受けてみた"
+date: 2025-03-28
+excerpt: "生成AIに先生役をやってもらって、デザイン観察力を鍛える授業を作って受けてみた記録。"
+image: /img/Screenshot_デザイントレーニングレッスン2.png
+css: /css/post-design-training.css
+toc: false
+---
                     <div class="article-sections">
                         <section id="intro" class="introduction">
                             <p>
@@ -248,7 +63,7 @@
 
                         <details class="accordion-section">
                             <summary>1. 「デザイン観察力トレーニング」の授業を作ってもらおう</summary>
-                            <section id="lesson-making">
+                            <section id="lesson2">
                                 <div class="chapter-summary">
                                     <h4>この章のポイント</h4>
                                     <p>独習がしたいので、AIに依頼しました。依頼内容は、カリキュラムの作成と、先生としての授業実践。<br>
@@ -385,7 +200,7 @@
                             <section id="practice1">
                                 <!-- バナー画像の表示 -->
                                 <figure>
-                                    <img src="img/ChatGPT Image 2025年3月28日 12_50_43.png" 
+                                    <img src="{{ '/img/ChatGPT Image 2025年3月28日 12_50_43.png' | relative_url }}" 
                                          alt="バナー画像の比較_0328" 
                                          width="500"
                                          style="display: block; 
@@ -676,36 +491,5 @@
                         めっちゃむずでしたね、これも、練習していきましょう
                     </p>
 
-                    <div class="back-link">
-                        <p><a href="index.html" class="btn">戻る</a></p>
-                    </div>
-                </article>
-            </main>
-
-        </div>
-
-        <footer id="contact"> 
-            <section class="profile">
-                <figure>
-                    <img src="img/_DSF5175.jpg" alt="むっぽの写真" width="160"/>
-                </figure>
-                <p style="font-size: 0.9em;">むっぽ/Shogo Yanagiです。1997年1月愛知県生まれ。<br>
-                    2021年に大学院（情報工学修士）を卒業したのち、
-                    経営コンサルティング企業に就職。<br>
-                    2024年2月に退職し、フリーランスとして活動している。Communicative bar HANABI、学術バーQ　のスタッフ。<br>
-                    歌を作って歌っている。<br>
-                </p>
-            </section>
-
-            <p><a href="mailto:backsuu@gmail.com">PLEASE E-MAIL ME ANYTIME.</a></p>
-            <p>© 2025 MUPPO</p>
-            <div style="display: flex; justify-content: center; gap: 10px;">
-                <a href="https://twitter.com/backsuu1" target="_blank" class="btn">Twitter</a>
-                <a href="https://www.instagram.com/muttsuri_noppo" target="_blank" class="btn">Instagram</a>
-                <a href="https://ko-fi.com/muttsurinoppo" target="_blank" class="btn">Buy Me a Coffee</a>
-            </div>
-        </footer>
-
-        <script src="js/main.js"></script>
-    </body>
-</html>
+                    
+                    <p><a href="{{ '/' | relative_url }}" class="btn">戻る</a></p>

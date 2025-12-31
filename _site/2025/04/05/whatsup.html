@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>2025年4月5日14時、調子はどう | My Blog</title>
+
+  <!-- メインCSS -->
+  <link rel="stylesheet" href="/MPBlog/css/style.css">
+
+  <!-- ページ固有CSS（必要なページだけ） -->
+  
+
+  <!-- Swiper CSS（全ページ共通でOK） -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+
+<body>
+
+  <main class="container">
+    <!-- 上部タブ（既存CSSの nav スタイルを再利用） -->
+<nav>
+  <ul>
+    <li><a href="/MPBlog/#about">About</a></li>
+    <li><a href="/MPBlog/#works">Works/Plays</a></li>
+    <li><a href="/MPBlog/#articles">Blog</a></li>
+    <li><a href="/MPBlog/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<article class="post">
+  <header>
+    <h1>2025年4月5日14時、調子はどう</h1>
+    <p class="article-date">2025.04.05</p>
+  </header>
+
+  
+  <!-- 目次（既存CSS: .table-of-contents を再利用） -->
+  <aside class="table-of-contents" id="js-toc" aria-label="目次">
+    <h2>目次</h2>
+    <div class="toc-sections" id="js-toc-body"></div>
+  </aside>
+  
+
+  <div class="post-body" id="js-post-body">
+                        <section>
+                        <p>調子はどうよ。<br>
+                            まぁまぁ春めいてきて、悪くはないよな。せっかく晴れた土曜日だし、出かけたりしている人が多いんだろうか。<br>
+
+                            ぼくは、やろうとしていた受験の、最終試験が今日あって、<br>
+                            今こうして文章を書いている時点で、お察し、行ってないんだけれども<br>
+
+                            どうだったんだろう。選ばなかった可能性のことを、うだうだ言うのは本当に好きじゃないんだけれど<br>
+                            
+                            昔から、「なるべく選択肢を削らないように」生きてきたつもりだったから、<br>
+                            自分から選択肢を選ばなかったときのやり方を、あんまり分からないでいるんだよな。<br>
+
+                            あ、絵が描きたい。なんか、ちゃんとそれっぽく見えるやつ。<br>
+                            それでいてちゃんと勉強になるやつ。<br>
+                            やば、こんなことしてて何になるんだが出てきてしまった。すぐ出る。<br>
+                            皆勤賞でも狙ってんのか？<br>
+
+                            とりあえずやるかぁ、ピンタレストから写真選んできて模写とかしよう。<br>
+
+                            <img src= "/MPBlog/img/20250405_1.jfif" alt="ピンタレスト模写の写真" width="300" style="text-align:   center;">
+
+                            いいじゃん、楽しかったね。お絵かきの時間、終了！<br>
+                            楽しく、ある種無為に生きていきましょう、それでいいのかは知らないけど。<br>
+                            それではまた。
+                        </p>
+                    </section>
+
+                    <p><a href="/MPBlog/" class="btn">戻る</a></p>
+  </div>
+
+</article>
+
+<nav class="post-nav" aria-label="前後の記事">
+  <div>
+    
+      <a class="btn" href="/MPBlog/2025/04/02/early-summer.html" style="margin-bottom: 10px;">
+        ← 前の記事：2025年4月2日、疲れたね
+      </a>
+    
+  </div>
+
+  <div>
+    
+  </div>
+</nav>
+
+<aside>
+    <section class="profile">
+      <h2>自己紹介</h2>
+      <figure>
+        <img src="/MPBlog/img/Muppo_prof.jpg" alt="むっぽの写真" width="200"/>
+      </figure>
+      <p>むっぽ/Shogo Yanagiです。1997年1月愛知県生まれ。<br>
+        2021年に情報工学の修士を取得し、
+        新卒で経営コンサル企業に入社し、3年弱勤務。<br>
+        学術バー・Communicativeバーのスタッフ、
+        ボーカルコーチを経て、改めて経営コンサルティング企業にて勤務。<br>
+        歌を作って歌っている。<br>
+      </p>
+    </section>
+  </aside>
+  
+<footer id="contact">
+    <div class="container"> 
+      <h2>お問い合わせ</h2>
+      <p>
+        <a href="mailto:backsuu@gmail.com">ご連絡はこちら!</a>
+      </p>
+    </div>
+  </footer>
+  
+
+<script>
+  window.addEventListener('load', () => {
+    const postBody = document.getElementById('js-post-body');
+    const toc = document.getElementById('js-toc');
+    const tocBody = document.getElementById('js-toc-body');
+    if (!postBody || !toc || !tocBody) return;
+
+    // h2/h3 を拾って目次を作る（必要なら h4 も追加OK）
+    const headings = postBody.querySelectorAll('h2, h3');
+
+    // 見出しが少ない場合は目次を非表示（好みで閾値調整OK）
+    if (headings.length < 2) {
+      toc.style.display = 'none';
+      return;
+    }
+
+    // id が無い見出しに id を付ける
+    const slugify = (s) =>
+      s.trim()
+        .toLowerCase()
+        .replace(/[^\w\u3040-\u30ff\u3400-\u9fff\u3005\u30a0-\u30ffー]+/g, '-') // 日本語も雑に許可
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+
+    const used = new Set();
+    const ensureUniqueId = (base) => {
+      let id = base || 'section';
+      let i = 1;
+      while (used.has(id) || document.getElementById(id)) {
+        id = `${base}-${i++}`;
+      }
+      used.add(id);
+      return id;
+    };
+
+    // 目次DOM構築（あなたのCSSの toc-* を使う）
+    // 構造は：.toc-sections の下に <a> を並べるだけでもOK
+    // ただ、既存CSSに合わせて .toc-section を使う
+    headings.forEach(h => {
+      const text = h.textContent.trim();
+      if (!text) return;
+
+      if (!h.id) {
+        h.id = ensureUniqueId(slugify(text));
+      }
+
+      const level = h.tagName.toLowerCase(); // h2 / h3
+      const a = document.createElement('a');
+      a.href = `#${h.id}`;
+      a.className = 'toc-section';
+      a.style.display = 'block';
+      a.style.textDecoration = 'none';
+
+      // h2/h3で少しインデント（必要なければ削ってOK）
+      a.style.marginLeft = (level === 'h3') ? '16px' : '0';
+
+      // 見た目はCSS側に寄せたいので、テキストはシンプルに
+      const title = document.createElement('h3');
+      title.textContent = text;
+      title.style.margin = '0';
+
+      a.appendChild(title);
+      tocBody.appendChild(a);
+    });
+  });
+</script>
+
+
+  </main>
+
+  <!-- Swiper JS（body末尾） -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</body>
+</html>
