@@ -1,0 +1,114 @@
+:root {
+  --bg: #f3f4f2;     /* 薄いグレー（少しだけ温かみ） */
+  --fg: #0f241a;     /* 黒に近い深緑 */
+  --muted: #5c6b63;  /* くすみグリーン寄りのグレー */
+  --link: #0b3a66;   /* 深い青 */
+  --line: #d8ddd8;   /* 罫線用（増やすならこれ1個だけ） */
+}
+
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino,
+               "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+
+.content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 18px 64px;
+}
+
+.site-header, .site-footer {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.site-header {
+  padding-top: 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.site-title {
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 650;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* 記事本文の“紙っぽさ” */
+.post-body {
+  margin-top: 10px;
+}
+
+.post-body p {
+  margin: 0 0 1.1em;
+}
+
+.post-body h2 {
+  margin-top: 2.2em;
+  padding-top: 0.6em;
+  border-top: 1px solid var(--line);
+}
+
+.post-body pre {
+  overflow: auto;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.post-body blockquote {
+  margin: 18px 0;
+  padding: 0 0 0 14px;
+  border-left: 3px solid var(--line);
+  color: var(--muted);
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-item {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.post-item-date {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.post-item-link {
+  font-weight: 600;
+}
+
