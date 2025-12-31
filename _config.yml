@@ -9,3 +9,6 @@ paginate_path: "/all-articles/page:num/"
 
 # 任意：タイムゾーン（日本）
 timezone: Asia/Tokyo
+
+baseurl: "/MPBlog"
+url: "https://yanagimp.github.io"

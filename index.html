@@ -78,15 +78,15 @@
                       <img src="{{ post.image }}" alt="{{ post.title }}" />
                     {% endif %}
           
-                    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-          
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                              
                     {% if post.excerpt %}
                     <p class="excerpt">
                       {{ post.excerpt | strip_html }}
                     </p>
                     {% endif %}
           
-                    <a href="{{ post.url }}" class="btn">続きを読む</a>
+                    <a href="{{ post.url | relative_url }}" class="btn">続きを読む</a>
                     <p class="article-date">{{ post.date | date: "%Y.%m.%d" }}</p>
                   </div>
                 </article>
@@ -99,7 +99,8 @@
             </div>
           
             <div class="view-all-articles" style="text-align:center;margin-top:15px;">
-              <a href="/all-articles.html" class="btn view-all-btn">すべての記事を見る</a>
+                <a href="{{ '/all-articles.html' | relative_url }}" class="btn view-all-btn">すべての記事を見る</a>
+
             </div>
           </section>
           
