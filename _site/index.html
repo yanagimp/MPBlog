@@ -1,0 +1,160 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Home | My Blog</title>
+  
+    <link rel="stylesheet" href="/MPBlog/css/style.css">
+    <body>
+        <main class="container">
+          <!doctype html>
+<html lang = "ja">
+
+    <!-- Swiper.jsのCDNを追加  ↑CSS, ↓JS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <head>
+        <meta charset = "UTF-8" />
+        <title>むっぽブログ</title>
+        <!-- 
+            linkタグ: 外部リソース（ここではCSSファイル）をHTMLに関連付けるためのタグ
+            rel属性: リンクされるリソースとの関係性を指定（ここでは"stylesheet"でCSSスタイルシートであることを示す）
+            href属性: リンク先のファイルパスを指定（ここでは"css/style.css"でcssフォルダ内のstyle.cssファイルを参照）
+        -->
+        <link rel = "stylesheet" href = "css/style.css">
+    </head>
+    
+    <body>
+
+    <main>
+
+        <section id="profile" class="text-overlay-container">
+            <div class = "job-title"> WANNABE </div>
+            <div class="background-text">MUPPO</div>
+            <div class="photo-container">
+                <img src="img/_DSF5175.jpg" alt="むっぽの写真" width="200"/>
+            </div>
+            <div class="profile-info">
+                <p>2021年に情報工学の修士を取得し、
+                    新卒で経営コンサル企業に入社し、3年弱勤務。<br>
+                    学術バー・
+                    Communicativeバーのスタッフ、
+                    ボーカルコーチを経て、改めて経営コンサルティング企業にて勤務。<br>
+                    分からないことだらけ。</p>
+                <div class="skills">
+                   <!-- スキルや経験などを追加できます -->
+                    #経営コンサル / #バースタッフ / #ボーカルコーチ / #情報工学(自然言語処理) /<br>
+                     #DTM / #ボイスパーカッション / #弾き語り
+            </div>
+            
+        </section>
+
+        <nav>
+            <ul>
+                <li><a href = "#about">About</a></li>
+                <li><a href = "#works">Works/Plays</a></li>
+                <li><a href = "#articles">Blog</a></li>
+                <li><a href = "#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section id="works">
+            <h2>Works/Plays</h2>
+            <div class="content-list">
+                <div class="content-card work">
+                    <img src="img/role.png" alt="roleの画像" width="500"/>
+                    <h3><a href="https://linkco.re/BqasTXrZ">role</a></h3>
+                    <p>作詞作曲から編曲、ミックス・マスタリングまで一人で制作したオリジナル曲。<br>
+                        "大人"のフリに疲れていませんか？と思うし、
+                        自分に対してもそう思っている。
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="articles">
+            <h2>Blog</h2>
+          
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                
+                
+                <article class="swiper-slide" style="text-align:center;">
+                  <div class="content-card article" style="text-align:center;">
+                    
+                      <img src="/img/image_screenshot_250326.png" alt="はじめてのHTML挑戦" />
+                    
+          
+                    <a href="/MPBlog/2025/03/25/first-html.html">はじめてのHTML挑戦</a>
+                              
+                    
+                    <p class="excerpt">
+                      はじめてのHTML挑戦について書きます。
+                    </p>
+                    
+          
+                    <a href="/MPBlog/2025/03/25/first-html.html" class="btn">続きを読む</a>
+                    <p class="article-date">2025.03.25</p>
+                  </div>
+                </article>
+                
+              </div>
+          
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+          
+            <div class="view-all-articles" style="text-align:center;margin-top:15px;">
+                <a href="/MPBlog/all-articles.html" class="btn view-all-btn">すべての記事を見る</a>
+
+            </div>
+          </section>
+          
+    </main>
+
+    <footer id = "contact"> 
+        <p><a href="mailto:backsuu@gmail.com"> PLEASE E-MAIL ME ANYTIME.</a></p>
+        <p>© 2025 MUPPO</p>
+        <div style="display: flex; justify-content: center; gap: 10px;">
+            <a href="https://twitter.com/backsuu1" target="_blank" class="btn">Twitter</a>
+            <a href="https://www.instagram.com/muttsuri_noppo" target="_blank" class="btn">Instagram</a>
+            <a href="https://ko-fi.com/muttsurinoppo" target="_blank" class="btn">Buy Me a Coffee</a>
+        </div>
+    </footer>
+    <script>
+        window.addEventListener('load', () => {
+          const slideCount = document.querySelectorAll('.swiper-slide').length;
+        
+          new Swiper('.swiper', {
+            loop: slideCount >= 4,
+            slidesPerView: Math.min(3, slideCount || 1),
+            spaceBetween: 10,
+            centeredSlides: true,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev'
+            },
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true
+            },
+            breakpoints: {
+              320:  { slidesPerView: 1 },
+              768:  { slidesPerView: Math.min(2, slideCount) },
+              1024: { slidesPerView: Math.min(3, slideCount) }
+            }
+          });
+        });
+        </script>
+        
+      
+</body>
+</html>
+
+        </main>
+      </body>
+      
+    
+      <link rel="stylesheet" href="/MPBlog/css/style.css">
+    
+  </head>
+  

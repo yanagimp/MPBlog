@@ -1,50 +1,34 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="UTF-8" />
-        <title>はじめてのHTML挑戦</title>
-        <!-- 
-            linkタグ: 外部リソース（ここではCSSファイル）をHTMLに関連付けるためのタグ
-            rel属性: リンクされるリソースとの関係性を指定（ここでは"stylesheet"でCSSスタイルシートであることを示す）
-            href属性: リンク先のファイルパスを指定（ここでは"css/style.css"でcssフォルダ内のstyle.cssファイルを参照）
-        -->
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    
+<head>
+    <meta charset="UTF-8">
+    <title>はじめてのHTML挑戦 | My Blog</title>
+  
+    <link rel="stylesheet" href="/MPBlog/css/style.css">
     <body>
-        <header>
-            <h1>むっつりのっぽのブログ</h1>
-            <p>個人サイト人間になろう、なれるか？</p>
-        </header>
+        <main class="container">
+          <!-- 上部タブ（既存CSSの nav スタイルを再利用） -->
+<nav>
+  <ul>
+    <li><a href="/MPBlog/#about">About</a></li>
+    <li><a href="/MPBlog/#works">Works/Plays</a></li>
+    <li><a href="/MPBlog/#articles">Blog</a></li>
+    <li><a href="/MPBlog/#contact">Contact</a></li>
+  </ul>
+</nav>
 
-        <nav>
-            <ul>
-                <li><a href="#articles">記事</a></li>
-                <li><a href="#contact">お問い合わせ</a></li>
-            </ul>
-        </nav>
+<article class="post">
+  <header>
+    <h1>はじめてのHTML挑戦</h1>
+    <p class="article-date">2025.03.25</p>
+  </header>
 
-        <div class="layout">
-            <main>
-                <h2>はじめてのHTML挑戦</h2>
+  <!-- 目次（既存CSS: .table-of-contents を再利用） -->
+  <aside class="table-of-contents" id="js-toc" aria-label="目次">
+    <h2>目次</h2>
+    <div class="toc-sections" id="js-toc-body"></div>
+  </aside>
 
-                <div class="table-of-contents">
-                    <h3>目次</h3>
-                    <ul>
-                        <li><a href="#intro">はじめに</a></li>
-                        <li><a href="#progress">やったこと・進捗報告</a></li>
-                        <li><a href="#impression">感想</a></li>
-                        <li><a href="#conclusion">おわりに</a></li>
-                    </ul>
-                </div>
-
-                <!-- 
-                コメント：目次のリンク先と実際の見出しにid属性が設定されていません。
-                例えば <h4 id="intro">はじめに</h4> のようにidを追加すると、
-                目次からのジャンプがスムーズになります。
-                -->
-
-                <h4 id="intro">はじめに</h4>
+  <div class="post-body" id="js-post-body">
+                    <h2 id="intro">はじめに</h2>
                 <p>はじめてのHTML挑戦について書きます。<br>
                     ぼくは、28歳男性フリーランス<br>
                     最近流行りのAIを使ってプログラミングをしよう！と思ったのは良かったが、<br>
@@ -86,7 +70,7 @@
                     めちゃ古のサイトみたいですけどね。でも、千里の道も一歩からでしょう？
                 </p>
 
-                <h4 id="progress">やったこと・進捗報告</h4>
+                <h2 id="progress">やったこと・進捗報告</h2>
                 <p>
                     23:30くらいから、26:30くらいまで、割とぶっ通しで遊んだ結果。<br>
                     基本は、ギャル師匠に聞いて、Cursorで写経。あんまり補完に頼らないようにはしたつもり。
@@ -124,7 +108,7 @@
                     <li>ログの表示とか、GPTeidanとか、ChatGPT上司とかをここに入れ込んでいきたい。。。</li>
                 </ul>
 
-                <h4 id="impression">感想</h4>
+                <h2 id="impression">感想</h2>
                 <p>
                     面白い！これに尽きる。<br>
                     今日やってみるまでの感覚だと、個人サイトって自分が作れるものではなかった。<br>
@@ -155,7 +139,7 @@
                     急がば回れ感、ある。
                 </p>
                 
-                <h4 id="conclusion">おわりに</h4>
+                <h2 id="conclusion">おわりに</h2>
                 <p>
                     なんとなく、フラフラして生きている人間ではありますが、<br>
                     文章は書きたいし、絵も描きたいし、音楽もやりたいし、<br>
@@ -177,44 +161,121 @@
 
                 <!-- <h2>この記事おもしろかった？</h2>
                 <button id="like-btn">♡ いいね（0）</button> -->
-                <p><a href="index.html" class="btn">戻る</a></p>
-            </main>
+                <p><a href="/MPBlog/" class="btn">戻る</a></p>
 
-            <aside>
-                <h2>自己紹介</h2>
-                <div style="text-align: center;">
-                    <img src="img/_DSF5175.jpg" alt="むっぽの写真" width="200"/>
-                </div>
-                <p>むっぽ/Shogo Yanagiです。1997年1月愛知県生まれ。<br>
-                    2021年に大学院（情報工学修士）を卒業したのち、
-                    経営コンサルティング企業に就職。<br>
-                    2024年2月に退職し、フリーランスとして活動している。Communicative bar HANABI、学術バーQ　のスタッフ。<br>
-                    歌を作って歌っている。<br>
-                </p>
-                
-                <!-- <h2>カテゴリー</h2>
-                <ul>
-                    <li><a href = "#">カテゴリー1</a></li>
-                    <li><a href = "#">カテゴリー2</a></li>
-                    <li><a href = "#">カテゴリー3</a></li>
-                </ul> -->
-                
-                <!-- 
-                コメント：サイドバーの自己紹介文は簡潔で良いですが、
-                SNSリンクなどがあると読者とのつながりが広がるかもしれません。
-                -->
-                
-                <!-- 
-                コメント：カテゴリーのリンクが「#」になっていますが、
-                実際のカテゴリーページができたら更新する必要があります。
-                -->
-            </aside>
-        </div>
 
-        <footer id="contact"> 
-            <p><a href="mailto:backsuu@gmail.com"> ご連絡はこちら!</a></p>
-        </footer>
 
-        <script src="js/main.js"></script>
-    </body>
-</html>
+  </div>
+
+</article>
+
+<nav class="post-nav" aria-label="前後の記事">
+  <div>
+    
+  </div>
+
+  <div>
+    
+  </div>
+</nav>
+
+<aside>
+    <section class="profile">
+      <h2>自己紹介</h2>
+      <figure>
+        <img src="/MPBlog/img/_DSF5175.jpg" alt="むっぽの写真" width="200"/>
+      </figure>
+      <p>むっぽ/Shogo Yanagiです。1997年1月愛知県生まれ。<br>
+        2021年に情報工学の修士を取得し、
+        新卒で経営コンサル企業に入社し、3年弱勤務。<br>
+        学術バー・Communicativeバーのスタッフ、
+        ボーカルコーチを経て、改めて経営コンサルティング企業にて勤務。<br>
+        歌を作って歌っている。<br>
+      </p>
+    </section>
+  </aside>
+  
+<footer id="contact">
+    <div class="container"> 
+      <h2>お問い合わせ</h2>
+      <p>
+        <a href="mailto:backsuu@gmail.com">ご連絡はこちら!</a>
+      </p>
+    </div>
+  </footer>
+  
+
+<script>
+  window.addEventListener('load', () => {
+    const postBody = document.getElementById('js-post-body');
+    const toc = document.getElementById('js-toc');
+    const tocBody = document.getElementById('js-toc-body');
+    if (!postBody || !toc || !tocBody) return;
+
+    // h2/h3 を拾って目次を作る（必要なら h4 も追加OK）
+    const headings = postBody.querySelectorAll('h2, h3');
+
+    // 見出しが少ない場合は目次を非表示（好みで閾値調整OK）
+    if (headings.length < 2) {
+      toc.style.display = 'none';
+      return;
+    }
+
+    // id が無い見出しに id を付ける
+    const slugify = (s) =>
+      s.trim()
+        .toLowerCase()
+        .replace(/[^\w\u3040-\u30ff\u3400-\u9fff\u3005\u30a0-\u30ffー]+/g, '-') // 日本語も雑に許可
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+
+    const used = new Set();
+    const ensureUniqueId = (base) => {
+      let id = base || 'section';
+      let i = 1;
+      while (used.has(id) || document.getElementById(id)) {
+        id = `${base}-${i++}`;
+      }
+      used.add(id);
+      return id;
+    };
+
+    // 目次DOM構築（あなたのCSSの toc-* を使う）
+    // 構造は：.toc-sections の下に <a> を並べるだけでもOK
+    // ただ、既存CSSに合わせて .toc-section を使う
+    headings.forEach(h => {
+      const text = h.textContent.trim();
+      if (!text) return;
+
+      if (!h.id) {
+        h.id = ensureUniqueId(slugify(text));
+      }
+
+      const level = h.tagName.toLowerCase(); // h2 / h3
+      const a = document.createElement('a');
+      a.href = `#${h.id}`;
+      a.className = 'toc-section';
+      a.style.display = 'block';
+      a.style.textDecoration = 'none';
+
+      // h2/h3で少しインデント（必要なければ削ってOK）
+      a.style.marginLeft = (level === 'h3') ? '16px' : '0';
+
+      // 見た目はCSS側に寄せたいので、テキストはシンプルに
+      const title = document.createElement('h3');
+      title.textContent = text;
+      title.style.margin = '0';
+
+      a.appendChild(title);
+      tocBody.appendChild(a);
+    });
+  });
+</script>
+
+
+        </main>
+      </body>
+      
+    
+  </head>
+  
