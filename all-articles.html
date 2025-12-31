@@ -1,7 +1,9 @@
 ---
 layout: default
 title: All Articles
+css: /css/all-articles.css
 ---
+
 
 <main>
   <h2>すべての記事</h2>
@@ -12,7 +14,7 @@ title: All Articles
         {% if post.image %}
           <img src="{{ post.image }}" alt="{{ post.title }}">
         {% endif %}
-        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <p class="excerpt">{{ post.excerpt | strip_html }}</p>
         <p class="article-date">{{ post.date | date: "%Y.%m.%d" }}</p>
       </article>
@@ -21,11 +23,11 @@ title: All Articles
 
   <nav class="pagination">
     {% if paginator.previous_page %}
-      <a class="btn" href="{{ paginator.previous_page_path }}">前へ</a>
-    {% endif %}
+      <a class="btn" href="{{ paginator.previous_page_path | relative_url }}">前へ</a>
+      {% endif %}
     <span>Page {{ paginator.page }} / {{ paginator.total_pages }}</span>
     {% if paginator.next_page %}
-      <a class="btn" href="{{ paginator.next_page_path }}">次へ</a>
+    <a class="btn" href="{{ paginator.next_page_path | relative_url }}">次へ</a>
     {% endif %}
   </nav>
 </main>

@@ -1,5 +1,9 @@
 ---
+layout: default
+title: Home
+css: /css/style.css
 ---
+
 <!doctype html>
 <html lang = "ja">
 
@@ -99,7 +103,7 @@
             </div>
           
             <div class="view-all-articles" style="text-align:center;margin-top:15px;">
-                <a href="{{ '/MPBlog/all-articles.html' | relative_url }}" class="btn view-all-btn">すべての記事を見る</a>
+                <a href="{{ '/all-articles.html' | relative_url }}" class="btn view-all-btn">すべての記事を見る</a>
 
             </div>
           </section>
@@ -115,24 +119,32 @@
             <a href="https://ko-fi.com/muttsurinoppo" target="_blank" class="btn">Buy Me a Coffee</a>
         </div>
     </footer>
-
     <script>
         window.addEventListener('load', () => {
-          const swiper = new Swiper('.swiper', {
-            loop: true,
-            slidesPerView: 3,
+          const slideCount = document.querySelectorAll('.swiper-slide').length;
+        
+          new Swiper('.swiper', {
+            loop: slideCount >= 4,
+            slidesPerView: Math.min(3, slideCount || 1),
             spaceBetween: 10,
             centeredSlides: true,
-            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev'
+            },
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true
+            },
             breakpoints: {
-              320: { slidesPerView: 1, spaceBetween: 10 },
-              768: { slidesPerView: 2, spaceBetween: 10 },
-              1024: { slidesPerView: 3, spaceBetween: 10 }
+              320:  { slidesPerView: 1 },
+              768:  { slidesPerView: Math.min(2, slideCount) },
+              1024: { slidesPerView: Math.min(3, slideCount) }
             }
           });
         });
-      </script>
+        </script>
+        
       
 </body>
 </html>
